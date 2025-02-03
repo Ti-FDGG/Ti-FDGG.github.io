@@ -27,19 +27,22 @@
 
   
   
-    <meta name="description" content="前言 使用GitHub Pages和Hexo搭建了一个自己的博客，把遇到的一些问题和对应解决方案记录一下。 这篇文章是在Hexo自动生成的文件（hello-world.md）里写的，于是就算是我的第一篇文章吧。  问题和解决方案 由于时隔半年我再次捡起这个博客，很多问题我已经忘了，所以这里只列出我还记得的问题（好像也没有。。）和从今天开始遇到的问题。  hexo deploy（hexo d）时，">
+    <meta name="description" content="前言 使用GitHub Pages和Hexo搭建了一个自己的博客，把遇到的一些问题和对应解决方案记录一下。 这篇文章是在Hexo自动生成的文件（hello-world.md）里写的，于是就算是我的第一篇文章吧。 注：本文章所写的问题，若未特别说明，则是面向本博客使用的hexo-theme-reimu主题的，请根据情况适度参考。  问题和解决方案 由于时隔半年我再次捡起这个博客，很多问题我已经忘了">
 <meta property="og:type" content="article">
 <meta property="og:title" content="一些搭建博客时遇上的问题和对应的解决方案">
 <meta property="og:url" content="https://ti-fdgg.github.io/2024/08/18/questions-and-solutions-while-bulid-blog/index.html">
 <meta property="og:site_name" content="Timothy&#39;s Blog">
-<meta property="og:description" content="前言 使用GitHub Pages和Hexo搭建了一个自己的博客，把遇到的一些问题和对应解决方案记录一下。 这篇文章是在Hexo自动生成的文件（hello-world.md）里写的，于是就算是我的第一篇文章吧。  问题和解决方案 由于时隔半年我再次捡起这个博客，很多问题我已经忘了，所以这里只列出我还记得的问题（好像也没有。。）和从今天开始遇到的问题。  hexo deploy（hexo d）时，">
+<meta property="og:description" content="前言 使用GitHub Pages和Hexo搭建了一个自己的博客，把遇到的一些问题和对应解决方案记录一下。 这篇文章是在Hexo自动生成的文件（hello-world.md）里写的，于是就算是我的第一篇文章吧。 注：本文章所写的问题，若未特别说明，则是面向本博客使用的hexo-theme-reimu主题的，请根据情况适度参考。  问题和解决方案 由于时隔半年我再次捡起这个博客，很多问题我已经忘了">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://ti-fdgg.github.io/2024/08/18/questions-and-solutions-while-bulid-blog/Spawnfailed%E6%8A%A5%E9%94%99%E4%BF%A1%E6%81%AF.png">
+<meta property="og:image" content="https://ti-fdgg.github.io/2024/08/18/questions-and-solutions-while-bulid-blog/giscus-getrepoid.png">
 <meta property="article:published_time" content="2024-08-17T16:00:00.000Z">
-<meta property="article:modified_time" content="2025-02-03T11:55:45.568Z">
+<meta property="article:modified_time" content="2025-02-03T14:25:09.520Z">
 <meta property="article:author" content="Mothy Ti">
 <meta property="article:tag" content="Hexo">
 <meta property="article:tag" content="博客&#x2F;Blog">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://ti-fdgg.github.io/2024/08/18/questions-and-solutions-while-bulid-blog/Spawnfailed%E6%8A%A5%E9%94%99%E4%BF%A1%E6%81%AF.png">
   
   
     <link rel="alternate" href="/atom.xml" title="Timothy's Blog" type="application/atom+xml">
@@ -202,7 +205,7 @@
   <h3 class="toc-title">文章目录</h3>
   <div class="sidebar-toc-wrapper toc-div-class" >
       
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-number">1.</span> <span class="toc-text"> 前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%97%AE%E9%A2%98%E5%92%8C%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88"><span class="toc-number">2.</span> <span class="toc-text"> 问题和解决方案</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#hexo-deployhexo-d%E6%97%B6%E6%8A%A5%E9%94%99error-spawn-failed"><span class="toc-number">2.1.</span> <span class="toc-text"> hexo deploy（hexo d）时，报错：“Error: Spawn failed”</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8algolia%E5%AE%9E%E7%8E%B0%E6%90%9C%E7%B4%A2%E5%8A%9F%E8%83%BD%E6%97%B6%E7%9A%84algolia%E7%BD%91%E7%AB%99%E9%85%8D%E7%BD%AE"><span class="toc-number">2.2.</span> <span class="toc-text"> 使用Algolia实现搜索功能时的Algolia网站配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8gitalk%E9%85%8D%E7%BD%AE%E8%AF%84%E8%AE%BA%E5%8C%BA%E6%97%B6%E9%A1%B5%E9%9D%A2%E6%98%BE%E7%A4%BA%E6%9C%AA%E6%89%BE%E5%88%B0%E7%9B%B8%E5%85%B3%E7%9A%84-issues-%E8%BF%9B%E8%A1%8C%E8%AF%84%E8%AE%BA%E7%AD%89%E5%86%85%E5%AE%B9"><span class="toc-number">2.3.</span> <span class="toc-text"> 使用gitalk配置评论区时，页面显示：“未找到相关的 Issues 进行评论”等内容</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8gitalk%E9%85%8D%E7%BD%AE%E8%AF%84%E8%AE%BA%E5%8C%BA%E6%97%B6%E6%8A%A5%E9%94%99error-validation-failed"><span class="toc-number">2.4.</span> <span class="toc-text"> 使用gitalk配置评论区时，报错：“Error: Validation Failed”</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8giscus%E9%85%8D%E7%BD%AE%E8%AF%84%E8%AE%BA%E5%8C%BA%E6%97%B6%E6%97%A0%E6%B3%95%E5%9C%A8%E8%AF%A5%E4%BB%93%E5%BA%93%E4%B8%8A%E4%BD%BF%E7%94%A8-giscus-%E8%AF%B7%E7%A1%AE%E4%BF%9D%E4%BB%A5%E4%B8%8A%E6%9D%A1%E4%BB%B6%E5%9D%87%E5%B7%B2%E6%BB%A1%E8%B6%B3"><span class="toc-number">2.5.</span> <span class="toc-text"> 使用giscus配置评论区时，“无法在该仓库上使用 giscus。请确保以上条件均已满足。”</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B6%E4%BB%96%E5%8A%9F%E8%83%BD%E5%90%90%E6%A7%BD"><span class="toc-number">3.</span> <span class="toc-text"> 其他功能吐槽</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%90%9C%E7%B4%A2%E5%8A%9F%E8%83%BD"><span class="toc-number">3.1.</span> <span class="toc-text"> 搜索功能</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9B%B4%E6%96%B0%E8%AE%B0%E5%BD%95"><span class="toc-number">4.</span> <span class="toc-text"> 更新记录</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-number">1.</span> <span class="toc-text"> 前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%97%AE%E9%A2%98%E5%92%8C%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88"><span class="toc-number">2.</span> <span class="toc-text"> 问题和解决方案</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#hexo-deployhexo-d%E9%83%A8%E7%BD%B2%E6%96%87%E4%BB%B6%E5%88%B0github%E6%97%B6%E6%8A%A5%E9%94%99error-spawn-failed"><span class="toc-number">2.1.</span> <span class="toc-text"> hexo deploy（hexo d）部署文件到GitHub时，报错：“Error: Spawn failed”</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8algolia%E5%AE%9E%E7%8E%B0%E6%90%9C%E7%B4%A2%E5%8A%9F%E8%83%BD%E6%97%B6%E7%9A%84algolia%E7%BD%91%E7%AB%99%E9%85%8D%E7%BD%AE"><span class="toc-number">2.2.</span> <span class="toc-text"> 使用Algolia实现搜索功能时的Algolia网站配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8gitalk%E9%85%8D%E7%BD%AE%E8%AF%84%E8%AE%BA%E5%8C%BA%E6%97%B6%E9%A1%B5%E9%9D%A2%E6%98%BE%E7%A4%BA%E6%9C%AA%E6%89%BE%E5%88%B0%E7%9B%B8%E5%85%B3%E7%9A%84-issues-%E8%BF%9B%E8%A1%8C%E8%AF%84%E8%AE%BA%E7%AD%89%E5%86%85%E5%AE%B9"><span class="toc-number">2.3.</span> <span class="toc-text"> 使用gitalk配置评论区时，页面显示：“未找到相关的 Issues 进行评论”等内容</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8gitalk%E9%85%8D%E7%BD%AE%E8%AF%84%E8%AE%BA%E5%8C%BA%E6%97%B6%E6%8A%A5%E9%94%99error-validation-failed"><span class="toc-number">2.4.</span> <span class="toc-text"> 使用gitalk配置评论区时，报错：“Error: Validation Failed”</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8giscus%E9%85%8D%E7%BD%AE%E8%AF%84%E8%AE%BA%E5%8C%BA%E6%97%B6%E6%97%A0%E6%B3%95%E5%9C%A8%E8%AF%A5%E4%BB%93%E5%BA%93%E4%B8%8A%E4%BD%BF%E7%94%A8-giscus-%E8%AF%B7%E7%A1%AE%E4%BF%9D%E4%BB%A5%E4%B8%8A%E6%9D%A1%E4%BB%B6%E5%9D%87%E5%B7%B2%E6%BB%A1%E8%B6%B3"><span class="toc-number">2.5.</span> <span class="toc-text"> 使用giscus配置评论区时，“无法在该仓库上使用 giscus。请确保以上条件均已满足。”</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B6%E4%BB%96%E5%8A%9F%E8%83%BD%E5%90%90%E6%A7%BD"><span class="toc-number">3.</span> <span class="toc-text"> 其他功能吐槽</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%90%9C%E7%B4%A2%E5%8A%9F%E8%83%BD"><span class="toc-number">3.1.</span> <span class="toc-text"> 搜索功能</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9B%B4%E6%96%B0%E8%AE%B0%E5%BD%95"><span class="toc-number">4.</span> <span class="toc-text"> 更新记录</span></a></li></ol>
       
   </div>
 </div>
@@ -316,14 +319,23 @@
         <h2 id="前言"><a class="markdownIt-Anchor" href="#前言"></a> 前言</h2>
 <p>使用<a target="_blank" rel="noopener" href="https://docs.github.com/zh/pages"><strong>GitHub Pages</strong></a>和<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn"><strong>Hexo</strong></a>搭建了一个自己的博客，把遇到的一些问题和对应解决方案记录一下。<br />
 这篇文章是在Hexo自动生成的文件（<a target="_blank" rel="noopener" href="http://hello-world.md">hello-world.md</a>）里写的，于是就算是我的第一篇文章吧。</p>
+<p><strong>注：本文章所写的问题，若未特别说明，则是面向本博客使用的<a target="_blank" rel="noopener" href="https://github.com/D-Sketon/hexo-theme-reimu">hexo-theme-reimu</a>主题的，请根据情况适度参考。</strong></p>
 <h2 id="问题和解决方案"><a class="markdownIt-Anchor" href="#问题和解决方案"></a> 问题和解决方案</h2>
-<p>由于时隔半年我再次捡起这个博客，很多问题我已经忘了，所以这里只列出我还记得的问题（好像也没有。。）和从今天开始遇到的问题。</p>
-<h3 id="hexo-deployhexo-d时报错error-spawn-failed"><a class="markdownIt-Anchor" href="#hexo-deployhexo-d时报错error-spawn-failed"></a> hexo deploy（hexo d）时，报错：“Error: Spawn failed”</h3>
+<p>由于时隔半年我再次捡起这个博客，很多问题我已经忘了，所以这里只列出我还记得的问题（好像也记不得了。。）和从今天开始遇到的问题。</p>
+<h3 id="hexo-deployhexo-d部署文件到github时报错error-spawn-failed"><a class="markdownIt-Anchor" href="#hexo-deployhexo-d部署文件到github时报错error-spawn-failed"></a> hexo deploy（hexo d）部署文件到GitHub时，报错：“Error: Spawn failed”</h3>
+<p>如图：<br />
+<img src="Spawnfailed%E6%8A%A5%E9%94%99%E4%BF%A1%E6%81%AF.png" alt="Spawnfailed报错信息" /><br />
+主要报错信息如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+<p>这个问题可能由多种原因造成，为此我结合网上的解决方案以及自身实际写了一篇单独的博客，请移步<a href=""></a>。</p>
 <h3 id="使用algolia实现搜索功能时的algolia网站配置"><a class="markdownIt-Anchor" href="#使用algolia实现搜索功能时的algolia网站配置"></a> 使用Algolia实现搜索功能时的Algolia网站配置</h3>
 <p>网上的大多数是比较旧的教程，看起来Algolia最近有一些页面的更改。</p>
 <h3 id="使用gitalk配置评论区时页面显示未找到相关的-issues-进行评论等内容"><a class="markdownIt-Anchor" href="#使用gitalk配置评论区时页面显示未找到相关的-issues-进行评论等内容"></a> 使用gitalk配置评论区时，页面显示：“未找到相关的 Issues 进行评论”等内容</h3>
 <h3 id="使用gitalk配置评论区时报错error-validation-failed"><a class="markdownIt-Anchor" href="#使用gitalk配置评论区时报错error-validation-failed"></a> 使用gitalk配置评论区时，报错：“Error: Validation Failed”</h3>
 <h3 id="使用giscus配置评论区时无法在该仓库上使用-giscus-请确保以上条件均已满足"><a class="markdownIt-Anchor" href="#使用giscus配置评论区时无法在该仓库上使用-giscus-请确保以上条件均已满足"></a> 使用giscus配置评论区时，“无法在该仓库上使用 giscus。请确保以上条件均已满足。”</h3>
+<p>giscus配置评论区需要repo-id，repo-id是在<a target="_blank" rel="noopener" href="https://giscus.app/zh-CN">giscus官方页面</a>上输入仓库名以及选择Discussion分类后从下方“启动giscus”标题下的<code>&lt;script&gt;</code>标签中提取的。<br />
+仓库名一般就是你的GitHub Pages所在仓库名。除了官方页面上提示的三点之外，注意在“仓库：”下方的输入框内输入的是<strong>用户名/仓库名</strong>（如Ti-FDGG/ti-fdgg.github.io），否则仍会报错：“无法在该仓库上使用 giscus。请确保以上条件均已满足。”<br />
+<img src="giscus-getrepoid.png" alt="" /></p>
 <h2 id="其他功能吐槽"><a class="markdownIt-Anchor" href="#其他功能吐槽"></a> 其他功能吐槽</h2>
 <h3 id="搜索功能"><a class="markdownIt-Anchor" href="#搜索功能"></a> 搜索功能</h3>
 <p><a target="_blank" rel="noopener" href="https://github.com/wzpan/hexo-generator-search/">hexo-generator-search</a>每次搜索都要按一下Enter，有点麻烦。相比之下，<a target="_blank" rel="noopener" href="https://www.algolia.com/">Algolia</a>的搜索体验更好。<br />
@@ -335,6 +347,8 @@
 <ul>
 <li>添加问题：
 <ul>
+<li><a href="#hexo-deployhexo-d%E6%97%B6%E6%8A%A5%E9%94%99error-spawn-failed">hexo deploy（hexo d）时，报错：“Error: Spawn failed”</a></li>
+<li><a href="#%E4%BD%BF%E7%94%A8algolia%E5%AE%9E%E7%8E%B0%E6%90%9C%E7%B4%A2%E5%8A%9F%E8%83%BD%E6%97%B6%E7%9A%84algolia%E7%BD%91%E7%AB%99%E9%85%8D%E7%BD%AE">使用Algolia实现搜索功能时的Algolia网站配置</a></li>
 <li><a href="#%E4%BD%BF%E7%94%A8gitalk%E9%85%8D%E7%BD%AE%E8%AF%84%E8%AE%BA%E5%8C%BA%E6%97%B6%E9%A1%B5%E9%9D%A2%E6%98%BE%E7%A4%BA%E6%9C%AA%E6%89%BE%E5%88%B0%E7%9B%B8%E5%85%B3%E7%9A%84-issues-%E8%BF%9B%E8%A1%8C%E8%AF%84%E8%AE%BA%E7%AD%89%E5%86%85%E5%AE%B9">使用gitalk配置评论区时，页面显示：“未找到相关的 Issues 进行评论”等内容</a></li>
 <li><a href="#%E4%BD%BF%E7%94%A8gitalk%E9%85%8D%E7%BD%AE%E8%AF%84%E8%AE%BA%E5%8C%BA%E6%97%B6%E6%8A%A5%E9%94%99error-validation-failed">使用gitalk配置评论区时，报错：“Error: Validation Failed”</a></li>
 <li><a href="#%E4%BD%BF%E7%94%A8giscus%E9%85%8D%E7%BD%AE%E8%AF%84%E8%AE%BA%E5%8C%BA%E6%97%B6%E6%97%A0%E6%B3%95%E5%9C%A8%E8%AF%A5%E4%BB%93%E5%BA%93%E4%B8%8A%E4%BD%BF%E7%94%A8-giscus%E8%AF%B7%E7%A1%AE%E4%BF%9D%E4%BB%A5%E4%B8%8A%E6%9D%A1%E4%BB%B6%E5%9D%87%E5%B7%B2%E6%BB%A1%E8%B6%B3">使用giscus配置评论区时，“无法在该仓库上使用 giscus。请确保以上条件均已满足。”</a></li>
@@ -343,6 +357,7 @@
 <li>添加<a href="#%E9%97%AE%E9%A2%98%E5%92%8C%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88">问题和解决方案</a>板块</li>
 <li>添加<a href="#%E5%85%B6%E4%BB%96%E5%8A%9F%E8%83%BD%E5%90%90%E6%A7%BD">其他功能吐槽</a>板块</li>
 <li>添加<a href="#%E6%9B%B4%E6%96%B0%E8%AE%B0%E5%BD%95">更新记录</a>板块</li>
+<li>编辑前言</li>
 </ul>
 </li>
 <li>
@@ -378,7 +393,7 @@
         
           
           
-            <img data-src="/covers/rin2.webp" data-sizes="auto" alt="MIT-Missing-Semester 笔记" class="lazyload">
+            <img data-src="/covers/rin3.jpg" data-sizes="auto" alt="MIT-Missing-Semester 笔记" class="lazyload">
           
         
         <a href="/2024/08/18/MIT-Missing-Semester-Notes/"></a>
@@ -428,10 +443,10 @@
     
       <div>
         <span class="icon-brush"></span>
-        597
+        863
         &nbsp;|&nbsp;
         <span class="icon-coffee"></span>
-        00:03
+        00:04
       </div>
     
     
@@ -463,7 +478,7 @@
   <h3 class="toc-title">文章目录</h3>
   <div class="sidebar-toc-wrapper toc-div-class" >
       
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-number">1.</span> <span class="toc-text"> 前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%97%AE%E9%A2%98%E5%92%8C%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88"><span class="toc-number">2.</span> <span class="toc-text"> 问题和解决方案</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#hexo-deployhexo-d%E6%97%B6%E6%8A%A5%E9%94%99error-spawn-failed"><span class="toc-number">2.1.</span> <span class="toc-text"> hexo deploy（hexo d）时，报错：“Error: Spawn failed”</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8algolia%E5%AE%9E%E7%8E%B0%E6%90%9C%E7%B4%A2%E5%8A%9F%E8%83%BD%E6%97%B6%E7%9A%84algolia%E7%BD%91%E7%AB%99%E9%85%8D%E7%BD%AE"><span class="toc-number">2.2.</span> <span class="toc-text"> 使用Algolia实现搜索功能时的Algolia网站配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8gitalk%E9%85%8D%E7%BD%AE%E8%AF%84%E8%AE%BA%E5%8C%BA%E6%97%B6%E9%A1%B5%E9%9D%A2%E6%98%BE%E7%A4%BA%E6%9C%AA%E6%89%BE%E5%88%B0%E7%9B%B8%E5%85%B3%E7%9A%84-issues-%E8%BF%9B%E8%A1%8C%E8%AF%84%E8%AE%BA%E7%AD%89%E5%86%85%E5%AE%B9"><span class="toc-number">2.3.</span> <span class="toc-text"> 使用gitalk配置评论区时，页面显示：“未找到相关的 Issues 进行评论”等内容</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8gitalk%E9%85%8D%E7%BD%AE%E8%AF%84%E8%AE%BA%E5%8C%BA%E6%97%B6%E6%8A%A5%E9%94%99error-validation-failed"><span class="toc-number">2.4.</span> <span class="toc-text"> 使用gitalk配置评论区时，报错：“Error: Validation Failed”</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8giscus%E9%85%8D%E7%BD%AE%E8%AF%84%E8%AE%BA%E5%8C%BA%E6%97%B6%E6%97%A0%E6%B3%95%E5%9C%A8%E8%AF%A5%E4%BB%93%E5%BA%93%E4%B8%8A%E4%BD%BF%E7%94%A8-giscus-%E8%AF%B7%E7%A1%AE%E4%BF%9D%E4%BB%A5%E4%B8%8A%E6%9D%A1%E4%BB%B6%E5%9D%87%E5%B7%B2%E6%BB%A1%E8%B6%B3"><span class="toc-number">2.5.</span> <span class="toc-text"> 使用giscus配置评论区时，“无法在该仓库上使用 giscus。请确保以上条件均已满足。”</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B6%E4%BB%96%E5%8A%9F%E8%83%BD%E5%90%90%E6%A7%BD"><span class="toc-number">3.</span> <span class="toc-text"> 其他功能吐槽</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%90%9C%E7%B4%A2%E5%8A%9F%E8%83%BD"><span class="toc-number">3.1.</span> <span class="toc-text"> 搜索功能</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9B%B4%E6%96%B0%E8%AE%B0%E5%BD%95"><span class="toc-number">4.</span> <span class="toc-text"> 更新记录</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-number">1.</span> <span class="toc-text"> 前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%97%AE%E9%A2%98%E5%92%8C%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88"><span class="toc-number">2.</span> <span class="toc-text"> 问题和解决方案</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#hexo-deployhexo-d%E9%83%A8%E7%BD%B2%E6%96%87%E4%BB%B6%E5%88%B0github%E6%97%B6%E6%8A%A5%E9%94%99error-spawn-failed"><span class="toc-number">2.1.</span> <span class="toc-text"> hexo deploy（hexo d）部署文件到GitHub时，报错：“Error: Spawn failed”</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8algolia%E5%AE%9E%E7%8E%B0%E6%90%9C%E7%B4%A2%E5%8A%9F%E8%83%BD%E6%97%B6%E7%9A%84algolia%E7%BD%91%E7%AB%99%E9%85%8D%E7%BD%AE"><span class="toc-number">2.2.</span> <span class="toc-text"> 使用Algolia实现搜索功能时的Algolia网站配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8gitalk%E9%85%8D%E7%BD%AE%E8%AF%84%E8%AE%BA%E5%8C%BA%E6%97%B6%E9%A1%B5%E9%9D%A2%E6%98%BE%E7%A4%BA%E6%9C%AA%E6%89%BE%E5%88%B0%E7%9B%B8%E5%85%B3%E7%9A%84-issues-%E8%BF%9B%E8%A1%8C%E8%AF%84%E8%AE%BA%E7%AD%89%E5%86%85%E5%AE%B9"><span class="toc-number">2.3.</span> <span class="toc-text"> 使用gitalk配置评论区时，页面显示：“未找到相关的 Issues 进行评论”等内容</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8gitalk%E9%85%8D%E7%BD%AE%E8%AF%84%E8%AE%BA%E5%8C%BA%E6%97%B6%E6%8A%A5%E9%94%99error-validation-failed"><span class="toc-number">2.4.</span> <span class="toc-text"> 使用gitalk配置评论区时，报错：“Error: Validation Failed”</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8giscus%E9%85%8D%E7%BD%AE%E8%AF%84%E8%AE%BA%E5%8C%BA%E6%97%B6%E6%97%A0%E6%B3%95%E5%9C%A8%E8%AF%A5%E4%BB%93%E5%BA%93%E4%B8%8A%E4%BD%BF%E7%94%A8-giscus-%E8%AF%B7%E7%A1%AE%E4%BF%9D%E4%BB%A5%E4%B8%8A%E6%9D%A1%E4%BB%B6%E5%9D%87%E5%B7%B2%E6%BB%A1%E8%B6%B3"><span class="toc-number">2.5.</span> <span class="toc-text"> 使用giscus配置评论区时，“无法在该仓库上使用 giscus。请确保以上条件均已满足。”</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B6%E4%BB%96%E5%8A%9F%E8%83%BD%E5%90%90%E6%A7%BD"><span class="toc-number">3.</span> <span class="toc-text"> 其他功能吐槽</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%90%9C%E7%B4%A2%E5%8A%9F%E8%83%BD"><span class="toc-number">3.1.</span> <span class="toc-text"> 搜索功能</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9B%B4%E6%96%B0%E8%AE%B0%E5%BD%95"><span class="toc-number">4.</span> <span class="toc-text"> 更新记录</span></a></li></ol>
       
   </div>
 </div>
@@ -661,9 +676,9 @@
           url: "https://ti-fdgg.github.io/2024/08/18/questions-and-solutions-while-bulid-blog/",
           excerpt: "",
           description: "",
-          stripContent: " 前言 使用GitHub Pages和Hexo搭建了一个自己的博客，把遇到的一些问题和对应解决方案记录一下。 这篇文章是在Hexo自动生成的文件（hello-world.md）里写的，于是就算是我的第一篇文章吧。  问题和解决方案 由于时隔半年我再次捡起这个博客，很多问题我已经忘了，所以这里只列出我还记得的问题（好像也没有。。）和从今天开始遇到的问题。  hexo deploy（hexo d）时，报错：“Error: Spawn failed”  使用Algolia实现搜索功能时的Algolia",
+          stripContent: " 前言 使用GitHub Pages和Hexo搭建了一个自己的博客，把遇到的一些问题和对应解决方案记录一下。 这篇文章是在Hexo自动生成的文件（hello-world.md）里写的，于是就算是我的第一篇文章吧。 注：本文章所写的问题，若未特别说明，则是面向本博客使用的hexo-theme-reimu主题的，请根据情况适度参考。  问题和解决方案 由于时隔半年我再次捡起这个博客，很多问题我已经忘了，所以这里只列出我还记得的问题（好像也记不得了。。）和从今天开始遇到的问题。  hexo deplo",
           date: "Sun Aug 18 2024 00:00:00 GMT+0800",
-          updated: "Mon Feb 03 2025 19:55:45 GMT+0800",
+          updated: "Mon Feb 03 2025 22:25:09 GMT+0800",
           cover: "/images/banner/new_ban.webp",
         };
       </script>
