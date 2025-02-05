@@ -43,7 +43,7 @@
 <meta property="og:image" content="https://ti-fdgg.github.io/2024/08/18/questions-and-solutions-while-bulid-blog/giscus-getrepoid.png">
 <meta property="og:image" content="https://ti-fdgg.github.io/2024/08/18/questions-and-solutions-while-bulid-blog/%E5%85%A8%E6%98%AF%E5%A4%B4%E5%9B%BE.png">
 <meta property="article:published_time" content="2024-08-17T16:00:00.000Z">
-<meta property="article:modified_time" content="2025-02-04T07:47:45.797Z">
+<meta property="article:modified_time" content="2025-02-05T06:22:16.432Z">
 <meta property="article:author" content="Mothy Ti">
 <meta property="article:tag" content="Hexo">
 <meta property="article:tag" content="博客&#x2F;Blog">
@@ -73,6 +73,10 @@
 <link rel="stylesheet" href="https://npm.webcache.cn/@reimujs/aos@0.1.0/dist/aos.css">
 
   
+  
+    
+<link rel="stylesheet" href="https://npm.webcache.cn/aplayer@1.10.1/dist/APlayer.min.css">
+
   
 <meta name="generator" content="Hexo 7.3.0"></head>
 
@@ -204,6 +208,22 @@
           <aside id="sidebar">
   
   
+    <meting-js
+      theme="var(--color-link)"
+      id="2149887904"
+      server="netease"
+      type="song"
+      
+      fixed="false"
+      autoplay="true"
+      loop="all"
+      order="list"
+      preload="auto"
+      volume="0.7"
+      mutex="true"
+      list-folded="false"
+    ></meting-js>
+  
   <div class="sidebar-wrapper wrap-sticky">
     <div class="sidebar-wrap" data-aos="fade-up">
       
@@ -228,7 +248,7 @@
   </div>
   <div class="sidebar-state-category">
     <div>分类</div>
-    <div class="sidebar-state-number">4</div>
+    <div class="sidebar-state-number">7</div>
   </div>
   <div class="sidebar-state-tag">
     <div>标签</div>
@@ -305,13 +325,13 @@
       <div class="article-date">
   <a href="/2024/08/18/questions-and-solutions-while-bulid-blog/" class="article-date-link" data-aos="zoom-in">
     <time datetime="2024-08-17T16:00:00.000Z" itemprop="datePublished">2024-08-18</time>
-    <time style="display: none;" id="post-update-time">2025-02-04</time>
+    <time style="display: none;" id="post-update-time">2025-02-05</time>
   </a>
 </div>
 
       
   <div class="article-category">
-    <a class="article-category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%8A%80%E6%9C%AF/" data-aos="zoom-in">计算机技术</a>
+    <a class="article-category-link" href="/categories/%E6%9B%B4%E6%96%B0%E4%B8%AD/" data-aos="zoom-in">更新中</a><a class="article-category-link" href="/categories/%E6%9B%B4%E6%96%B0%E4%B8%AD/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%8A%80%E6%9C%AF/" data-aos="zoom-in">计算机技术</a>
   </div>
 
 
@@ -444,7 +464,7 @@
         
           
           
-            <img data-src="/covers/草船借箭.webp" data-sizes="auto" alt="MIT-Missing-Semester 笔记" class="lazyload">
+            <img data-src="/covers/thbwiki.jpg" data-sizes="auto" alt="MIT-Missing-Semester 笔记" class="lazyload">
           
         
         <a href="/2024/08/18/MIT-Missing-Semester-Notes/"></a>
@@ -546,7 +566,7 @@
   </div>
   <div class="sidebar-state-category">
     <div>分类</div>
-    <div class="sidebar-state-number">4</div>
+    <div class="sidebar-state-number">7</div>
   </div>
   <div class="sidebar-state-tag">
     <div>标签</div>
@@ -708,6 +728,87 @@
 
 
 
+  
+<script src="https://npm.webcache.cn/theme-shokax-pjax@0.0.3/dist/index.umd.js" integrity="sha384-xneY1WY8hOfUzswrE4CrYq35N4BdVcxqxwHPr9zawE&#x2F;jMSCxD+jAPU55x&#x2F;jj3wlf" crossorigin="anonymous"></script>
+
+  <script>
+    function loadScripts(scripts, index) {
+      if (index < scripts.length) {
+        const script = scripts[index];
+        const src = script.getAttribute('src');
+
+        const loadScript = (scriptContent) => {
+          const scriptElement = document.createElement('script');
+          if (script.type) {
+            scriptElement.type = script.type;
+          }
+          scriptElement.text = scriptContent;
+          document.head.appendChild(scriptElement);
+          loadScripts(scripts, index + 1);
+        }
+
+        if (src) {
+          fetch(src)
+            .then(response => {
+              if (!response.ok) {
+                throw new Error('Network response was not ok ' + response.statusText);
+              }
+              return response.text();
+            })
+            .then(scriptContent => {
+              loadScript(scriptContent);
+            })
+            .catch(error => {
+              console.error('Failed to load script:', src, error);
+            });
+        } else {
+          loadScript(script.text);
+        }
+      }
+    }
+    window.Pjax && new window.Pjax({
+      selectors: [
+        "#header>img",
+        "#header>picture",
+        "head title",
+        "#header-title",
+        "#subtitle-wrap",
+        "#main",
+        "#content",
+        ".sidebar-widget",
+        ".sidebar-wrapper",
+        '#mobile-nav',
+        '#lazy-script'
+      ],
+      switches: {
+        "#content": function(oldEl, newEl) {
+          // for sidebar change
+          oldEl.className = newEl.className;
+          this.onSwitch();
+        },
+        "#header-title": Pjax.switches.outerHTML,
+        "#subtitle-wrap": Pjax.switches.outerHTML,
+        "#main": function(oldEl, newEl) {
+          const scripts = [...newEl.querySelectorAll('script')];
+          loadScripts(scripts, 0);
+          oldEl.outerHTML = newEl.outerHTML
+          this.onSwitch()
+        },
+        "#mobile-nav": Pjax.switches.outerHTML,
+        '#lazy-script': function(oldEl, newEl) {
+          const scripts = [...newEl.querySelectorAll('script')];
+          loadScripts(scripts, 0);
+          oldEl.innerHTML = newEl.innerHTML
+          this.onSwitch()
+        },
+      },
+      cacheBust: false
+    })
+  </script>
+  
+<script src="/js/pjax.js"></script>
+
+
 
 
 
@@ -729,7 +830,7 @@
           description: "",
           stripContent: " 前言 使用GitHub Pages和Hexo搭建了一个自己的博客，把遇到的一些问题和对应解决方案记录一下。 这篇文章是在Hexo自动生成的文件（hello-world.md）里写的，于是就算是我的第一篇文章吧。 注：本文章所写的问题，若未特别说明，则是面向本博客使用的hexo-theme-reimu主题的，请根据情况适度参考。  问题和解决方案 由于时隔半年我再次捡起这个博客，很多问题我已经忘了，所以这里只列出我还记得的问题（好像也记不得了。。）和从今天开始遇到的问题。  hexo deplo",
           date: "Sun Aug 18 2024 00:00:00 GMT+0800",
-          updated: "Tue Feb 04 2025 15:47:45 GMT+0800",
+          updated: "Wed Feb 05 2025 14:22:16 GMT+0800",
           cover: "/images/banner/new_ban.webp",
         };
       </script>
@@ -860,7 +961,17 @@
 
 
 
+  
+<script src="https://npm.webcache.cn/aplayer@1.10.1/dist/APlayer.min.js" integrity="sha384-gdGYZwHnfJM54evoZhpO0s6ZF5BQiybkiyW7VXr+h5UfruuRL&#x2F;aORyw+5+HZoU6e" crossorigin="anonymous"></script>
 
+  
+
+
+
+  
+<script src="https://npm.webcache.cn/meting@2.0.1/dist/Meting.min.js" integrity="sha384-ASVlpKF80A22OXTK3tfEjZm1EL6uFMKIC4p8+0maanw1S&#x2F;IyB+Y4JG+ZDU7GpKE8" crossorigin="anonymous"></script>
+
+  
 
   </body>
   </html>
