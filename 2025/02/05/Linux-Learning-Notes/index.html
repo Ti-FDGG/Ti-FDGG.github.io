@@ -27,15 +27,15 @@
 
   
   
-    <meta name="description" content="主要通过Linux101来学习Linux的基础知识，以及一些常用的命令。感谢这篇文档的编辑者的辛勤付出。">
+    <meta name="description" content="主要通过Linux101来学习Linux的基础知识，以及一些常用的命令。感谢这篇文档的编辑者的辛勤付出。 本笔记结构计划仿照Linux101的组织结构，从零到附录每一章节的学习记录一章节的笔记。另外，也在文章开头设置负一章节，用于发表我对于记笔记这件事情的看法。  负一：记笔记  为什么要记笔记？（待整理修改） 更新：我之前有一个毛病就是看一篇文档看到底部，有时候就会思考自己看了什么，然后就又向上">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Linux学习笔记">
 <meta property="og:url" content="https://ti-fdgg.github.io/2025/02/05/Linux-Learning-Notes/index.html">
 <meta property="og:site_name" content="Timothy&#39;s Blog">
-<meta property="og:description" content="主要通过Linux101来学习Linux的基础知识，以及一些常用的命令。感谢这篇文档的编辑者的辛勤付出。">
+<meta property="og:description" content="主要通过Linux101来学习Linux的基础知识，以及一些常用的命令。感谢这篇文档的编辑者的辛勤付出。 本笔记结构计划仿照Linux101的组织结构，从零到附录每一章节的学习记录一章节的笔记。另外，也在文章开头设置负一章节，用于发表我对于记笔记这件事情的看法。  负一：记笔记  为什么要记笔记？（待整理修改） 更新：我之前有一个毛病就是看一篇文档看到底部，有时候就会思考自己看了什么，然后就又向上">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2025-02-05T05:41:58.000Z">
-<meta property="article:modified_time" content="2025-02-05T06:22:26.736Z">
+<meta property="article:modified_time" content="2025-02-06T13:23:14.736Z">
 <meta property="article:author" content="Mothy Ti">
 <meta property="article:tag" content="Shell">
 <meta property="article:tag" content="Linux">
@@ -223,7 +223,7 @@
   <h3 class="toc-title">文章目录</h3>
   <div class="sidebar-toc-wrapper toc-div-class" >
       
-        
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%B4%9F%E4%B8%80%E8%AE%B0%E7%AC%94%E8%AE%B0"><span class="toc-number">1.</span> <span class="toc-text"> 负一：记笔记</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E8%AE%B0%E7%AC%94%E8%AE%B0%E5%BE%85%E6%95%B4%E7%90%86%E4%BF%AE%E6%94%B9"><span class="toc-number">1.1.</span> <span class="toc-text"> 为什么要记笔记？（待整理修改）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%88%91%E4%BC%9A%E6%80%8E%E6%A0%B7%E5%8E%BB%E8%AE%B0%E7%AC%94%E8%AE%B0%E5%BE%85%E6%95%B4%E7%90%86%E4%BF%AE%E6%94%B9"><span class="toc-number">1.2.</span> <span class="toc-text"> 我会怎样去记笔记？（待整理修改）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9B%B6%E6%AC%A2%E8%BF%8E"><span class="toc-number">2.</span> <span class="toc-text"> 零：欢迎</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E5%88%9D%E8%AF%86linux"><span class="toc-number">3.</span> <span class="toc-text"> 一：初识Linux</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%8E%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F"><span class="toc-number">3.1.</span> <span class="toc-text"> 计算机与操作系统</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFlinux"><span class="toc-number">3.2.</span> <span class="toc-text"> 什么是Linux？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%88%91%E4%BB%AC%E8%BA%AB%E8%BE%B9%E7%9A%84-linux"><span class="toc-number">3.3.</span> <span class="toc-text"> 我们身边的 Linux</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%A9%E8%87%AA%E5%B7%B1%E7%9A%84%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%94%A8%E4%B8%8A-linux"><span class="toc-number">3.4.</span> <span class="toc-text"> 让自己的计算机用上 Linux</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%9D%E8%80%83%E9%A2%98"><span class="toc-number">3.5.</span> <span class="toc-text"> 思考题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8B%93%E5%B1%95%E9%98%85%E8%AF%BB"><span class="toc-number">3.6.</span> <span class="toc-text"> 拓展阅读</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E4%B8%AA%E6%80%A7%E5%8C%96%E9%85%8D%E7%BD%AE%E4%B8%8E%E5%BB%BA%E7%AB%99%E4%BD%93%E9%AA%8C"><span class="toc-number">4.</span> <span class="toc-text"> 二：个性化配置与建站体验</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A1%8C%E9%9D%A2%E7%8E%AF%E5%A2%83"><span class="toc-number">4.1.</span> <span class="toc-text"> 桌面环境</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%91%BD%E4%BB%A4%E8%A1%8C%E6%93%8D%E4%BD%9C"><span class="toc-number">4.2.</span> <span class="toc-text"> 命令行操作</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E7%94%A8%E5%91%BD%E4%BB%A4%E8%A1%8C"><span class="toc-number">4.2.1.</span> <span class="toc-text"> 为什么要用命令行</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#shell"><span class="toc-number">4.2.2.</span> <span class="toc-text"> shell</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%90%AD%E5%BB%BA%E7%AE%80%E6%98%93%E7%9A%84%E7%BD%91%E7%AB%99"><span class="toc-number">5.</span> <span class="toc-text"> 搭建简易的网站</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%9D%E8%80%83%E9%A2%98-2"><span class="toc-number">5.1.</span> <span class="toc-text"> 思考题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8B%93%E5%B1%95%E9%98%85%E8%AF%BB-2"><span class="toc-number">5.2.</span> <span class="toc-text"> 拓展阅读</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85%E4%B8%8E%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C"><span class="toc-number">6.</span> <span class="toc-text"> 三：软件安装与文件操作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85"><span class="toc-number">6.1.</span> <span class="toc-text"> 软件安装</span></a></li></ol></li></ol>
       
   </div>
 </div>
@@ -317,7 +317,7 @@
       <div class="article-date">
   <a href="/2025/02/05/Linux-Learning-Notes/" class="article-date-link" data-aos="zoom-in">
     <time datetime="2025-02-05T05:41:58.000Z" itemprop="datePublished">2025-02-05</time>
-    <time style="display: none;" id="post-update-time">2025-02-05</time>
+    <time style="display: none;" id="post-update-time">2025-02-06</time>
   </a>
 </div>
 
@@ -335,6 +335,94 @@
       
       
         <p>主要通过<a target="_blank" rel="noopener" href="https://101.lug.ustc.edu.cn/">Linux101</a>来学习Linux的基础知识，以及一些常用的命令。感谢这篇文档的编辑者的辛勤付出。</p>
+<p>本笔记结构计划仿照Linux101的组织结构，从零到附录每一章节的学习记录一章节的笔记。另外，也在文章开头设置负一章节，用于发表我对于记笔记这件事情的看法。</p>
+<h2 id="负一记笔记"><a class="markdownIt-Anchor" href="#负一记笔记"></a> 负一：记笔记</h2>
+<h3 id="为什么要记笔记待整理修改"><a class="markdownIt-Anchor" href="#为什么要记笔记待整理修改"></a> 为什么要记笔记？（待整理修改）</h3>
+<p>更新：我之前有一个毛病就是看一篇文档看到底部，有时候就会思考自己看了什么，然后就又向上翻自己记住了什么。或者是长时间看一系列的文档，经常会在开始新的一段看文档的过程中翻看上一段时间看过的部分。这样有时候其实是效率低下的无意义乱翻。然而通过记笔记，我可以将自己认为重要的地方加以总结，同时我也能够知道我看到了学到了什么，而不会陷入迷茫的无意义“复习”中。</p>
+<p>我不知道。因为我看大家很多人在记，所以我也就记。</p>
+<p>可能有一点原因吧。之前我学习一门新的计算机技术的方式就是对着课本（如C语言、数据结构）、文档（如Web开发）或者视频硬看，很多情况会连续的看上好几个小时，顶多有时候哦把教程中的演示代码或者命令照抄一遍。但是几次经历下来，我发现这样的学习效果非常的差，学的极其的慢而且学完之后很快就忘记了。</p>
+<p>啊那难道记笔记就学习效果好了吗？我也不知道。不过在学习的过程中，实时的把知识点通过某种方式复述一遍，至少一定比干瞪眼看要好一些。</p>
+<h3 id="我会怎样去记笔记待整理修改"><a class="markdownIt-Anchor" href="#我会怎样去记笔记待整理修改"></a> 我会怎样去记笔记？（待整理修改）</h3>
+<p>更新：总结记录章节重要内容，选择性回答思考题，选择性阅读拓展阅读。</p>
+<p>更新：如果是非Linux101内容，我会用引用块来标出。</p>
+<p>暂时不清楚。</p>
+<h2 id="零欢迎"><a class="markdownIt-Anchor" href="#零欢迎"></a> 零：欢迎</h2>
+<p>暂无内容。</p>
+<h2 id="一初识linux"><a class="markdownIt-Anchor" href="#一初识linux"></a> 一：初识Linux</h2>
+<h3 id="计算机与操作系统"><a class="markdownIt-Anchor" href="#计算机与操作系统"></a> 计算机与操作系统</h3>
+<p>计算机操作系统成为了联络一般用户和计算机底层设备的中介，让用户无需关心绝大多数的底层设备，大大降低了用户的使用学习成本。</p>
+<p>现代操作系统的功能：进程管理、内存管理、文件系统、网络通信、安全机制、用户界面、驱动程序等。</p>
+<h3 id="什么是linux"><a class="markdownIt-Anchor" href="#什么是linux"></a> 什么是Linux？</h3>
+<p>1969 年，美国 AT&amp;T 公司的贝尔实验室开发了 UNIX 操作系统。1983 年 9 月 27 日，理查德·斯托曼（Richard Stallman）在麻省理工学院发起了 GNU 计划。在这个计划中诞生了之后十分有名的“GNU 通用公共许可证”（英文简称 GPL）。</p>
+<p>1991年，林纳斯·托瓦兹在大学期间编写并发布了自己的操作系统，也就是后来所谓的 “Linux 内核”，成为了如今各类 Linux 发行版的基础。</p>
+<p>Linux 内核并不是一个完整的操作系统，为了能让这个内核拥有更多功能、完善的用户界面和更佳的使用体验，许多自由软件社区的开发人员和一些计算机商业公司便开始把各种组件添加到这个内核之上，这才构建成了一个完整的 Linux 操作系统。由于Linux是开源的，所以通过这种方式组合出来的 Linux 操作系统会有许许多多的形式。为了指代某一个基于 Linux 内核构造出来的操作系统，我们通常都将其称之为“Linux 发行版”。</p>
+<p>GNU自由软件举例：gcc、gdb、gzip、GNOME、gimp等。当然g开头的不一定是GNU的，不是g开头的也有可能是GNU的。</p>
+<p>Linux发行版：</p>
+<ol>
+<li>Debian分支：Debian、Ubuntu</li>
+<li>Red Hat分支：Red Hat、Fedora、CentOS</li>
+<li>Arch Linux 分支：Arch Linux、Manjaro</li>
+</ol>
+<h3 id="我们身边的-linux"><a class="markdownIt-Anchor" href="#我们身边的-linux"></a> 我们身边的 Linux</h3>
+<p>Android是Linux的一个著名发行版。Android 属于 Android/Linux 分支。由谷歌公司推出的 Android 叫做 Android 原生系统，而基于该原生系统诞生出来的各类独特的操作系统就是 Android/Linux 系下的子发行版。Android/Linux 下的子发行版很多，如华为公司的 EMUI 操作系统和小米公司的 MIUI 操作系统等。</p>
+<p>绝大部分的服务器维护人员都愿意选择一些 Linux 发行版作为它们的操作系统。</p>
+<p>Android/Linux 分支下的各类发行版正是主流的嵌入式操作系统。</p>
+<h3 id="让自己的计算机用上-linux"><a class="markdownIt-Anchor" href="#让自己的计算机用上-linux"></a> 让自己的计算机用上 Linux</h3>
+<p><a target="_blank" rel="noopener" href="https://101.lug.ustc.edu.cn/Ch01/#use-linux">让自己的计算机用上 Linux</a></p>
+<p>若已经安装了上述虚拟机管理软件，则可以直接双击打开虚拟机镜像（即下载的<code>.ova</code>文件），管理软件会打开并导入该镜像，导入完毕后可直接点击开始按钮启动。</p>
+<p>如果读者采用了上面列出的虚拟机之一，其默认登录用户名和密码均为<code>ustc</code>，输入密码即可登录虚拟机系统桌面。</p>
+<h3 id="思考题"><a class="markdownIt-Anchor" href="#思考题"></a> 思考题</h3>
+<p>暂无内容。</p>
+<h3 id="拓展阅读"><a class="markdownIt-Anchor" href="#拓展阅读"></a> 拓展阅读</h3>
+<p>暂无内容。</p>
+<h2 id="二个性化配置与建站体验"><a class="markdownIt-Anchor" href="#二个性化配置与建站体验"></a> 二：个性化配置与建站体验</h2>
+<blockquote>
+<p>使用VMware Workstation的，可以看到Linux101提供的镜像包含了VMware Tools，可以实现文件拖放、剪贴板共享、自适应分辨率等功能。</p>
+</blockquote>
+<h3 id="桌面环境"><a class="markdownIt-Anchor" href="#桌面环境"></a> 桌面环境</h3>
+<p>Linux 本身并不包括图形界面。几个流行的桌面环境：KDE Plasma、GNOME、Xface。无论是哪一款桌面系统，个性化的方式都大同小异。</p>
+<blockquote>
+<p>如果进入桌面之后发现图标、文字过小或过大（不过按理说VMware Tools给自适应过了，但是我的第一次打开时就是图标文字都很小），可以通过以下命令查看和调节分辨率。（也可查阅：<a target="_blank" rel="noopener" href="https://101.lug.ustc.edu.cn/Ch01/supplement/#vm-scale">屏幕缩放</a>）</p>
+<ol>
+<li>查看分辨率</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xrandr</span><br></pre></td></tr></table></figure>
+<p>可以看到当前分辨率和显示设备名称（即Virtual1），如下所示：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Screen 0: minimum 1 x 1, current 1024 x 768, maximum 16384 x 16384</span><br><span class="line">Virtual1 connected primary 1024x768+0+0 (normal left inverted right x axis y axis) 0mm x 0mm</span><br><span class="line">  1024x768      60.00*+  60.00  </span><br><span class="line">  3840x2400     59.97  </span><br><span class="line">  3840x2160     59.97  </span><br><span class="line">  （下略）</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>调节分辨率</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xrandr --output Virtual1 --mode 1024x768</span><br></pre></td></tr></table></figure>
+<p>将<code>1024x768</code>替换为你想要的分辨率即可。<br />
+支持的分辨率可以在<code>xrandr</code>的输出中找到（即下面的从第四行开始的数字，其中的分隔符号为字母<code>x</code>）。注意：如果你的显示器不支持该分辨率，会出现黑屏，此时需要等待一段时间，系统会自动恢复到上一个分辨率。<br />
+如果你的显示器支持自适应分辨率，可以尝试使用<code>xrandr --output Virtual1 --auto</code>命令。<br />
+3. 添加自定义分辨率<br />
+可以自行查阅，这里不再赘述。</p>
+</blockquote>
+<p>其余部分我认为暂时不需要记录，主要为个性化配置，需要时查阅即可。</p>
+<h3 id="命令行操作"><a class="markdownIt-Anchor" href="#命令行操作"></a> 命令行操作</h3>
+<h4 id="为什么要用命令行"><a class="markdownIt-Anchor" href="#为什么要用命令行"></a> 为什么要用命令行</h4>
+<p>使用命令行操作可以减少鼠标操作，我们经常可以使用一条命令来代替好几次的鼠标单击。但是从长远上看，熟悉了命令行之后再加上有自动补全的 shell 程序，使用命令行可以节省大量时间。</p>
+<p>路径的概念：正斜杠反斜杠，绝对路径相对路径。</p>
+<p>命令行操作可以整合成<code>.sh</code>为文件名结尾的自动化脚本。</p>
+<h4 id="shell"><a class="markdownIt-Anchor" href="#shell"></a> shell</h4>
+<ul>
+<li><code>ls</code>: 列出（list）目录的内容</li>
+<li><code>cd</code>: 更改目录（change directory）</li>
+<li><code>pwd</code>: 查看当前所在的目录（print working directory）</li>
+</ul>
+<h2 id="搭建简易的网站"><a class="markdownIt-Anchor" href="#搭建简易的网站"></a> 搭建简易的网站</h2>
+<blockquote>
+<p>由于未知原因，Linux101上提供的镜像无法联网，因此我转为使用24年寒假搭建的CentOS Stream 9虚拟机进行操作。在这个虚拟机上我暂时没有搭建图形化界面的想法，因此涉及到图形化界面操作的部分我将暂时跳过，以后有需要再进行补充。</p>
+</blockquote>
+<p>暂无内容。</p>
+<h3 id="思考题-2"><a class="markdownIt-Anchor" href="#思考题-2"></a> 思考题</h3>
+<p>暂无内容。</p>
+<h3 id="拓展阅读-2"><a class="markdownIt-Anchor" href="#拓展阅读-2"></a> 拓展阅读</h3>
+<p>暂无内容。</p>
+<h2 id="三软件安装与文件操作"><a class="markdownIt-Anchor" href="#三软件安装与文件操作"></a> 三：软件安装与文件操作</h2>
+<h3 id="软件安装"><a class="markdownIt-Anchor" href="#软件安装"></a> 软件安装</h3>
+<p>自带应用商店的发行版，如 Ubuntu、Manjaro 等，可以直接在应用商店中搜索并安装软件。而没有应用商店的发行版，也可以安装 Snapcraft 或 Flatpak 等在不同发行版上通用的应用商店。</p>
 
       
     </div>
@@ -395,7 +483,7 @@
       
         
         
-          <img data-src="/covers/妖梦头像.jpeg" data-sizes="auto" alt="hexo deploy（hexo d）部署文件到GitHub时，报错：“Error:Spawn failed”" class="lazyload">
+          <img data-src="/covers/很好看的魔爱.webp" data-sizes="auto" alt="hexo deploy（hexo d）部署文件到GitHub时，报错：“Error:Spawn failed”" class="lazyload">
         
       
       <a href="/2025/02/04/SpawnFailed/"></a>
@@ -444,10 +532,10 @@
     
       <div>
         <span class="icon-brush"></span>
-        2.9k
+        5k
         &nbsp;|&nbsp;
         <span class="icon-coffee"></span>
-        00:13
+        00:19
       </div>
     
     
@@ -479,7 +567,7 @@
   <h3 class="toc-title">文章目录</h3>
   <div class="sidebar-toc-wrapper toc-div-class" >
       
-        
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%B4%9F%E4%B8%80%E8%AE%B0%E7%AC%94%E8%AE%B0"><span class="toc-number">1.</span> <span class="toc-text"> 负一：记笔记</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E8%AE%B0%E7%AC%94%E8%AE%B0%E5%BE%85%E6%95%B4%E7%90%86%E4%BF%AE%E6%94%B9"><span class="toc-number">1.1.</span> <span class="toc-text"> 为什么要记笔记？（待整理修改）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%88%91%E4%BC%9A%E6%80%8E%E6%A0%B7%E5%8E%BB%E8%AE%B0%E7%AC%94%E8%AE%B0%E5%BE%85%E6%95%B4%E7%90%86%E4%BF%AE%E6%94%B9"><span class="toc-number">1.2.</span> <span class="toc-text"> 我会怎样去记笔记？（待整理修改）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9B%B6%E6%AC%A2%E8%BF%8E"><span class="toc-number">2.</span> <span class="toc-text"> 零：欢迎</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E5%88%9D%E8%AF%86linux"><span class="toc-number">3.</span> <span class="toc-text"> 一：初识Linux</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%8E%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F"><span class="toc-number">3.1.</span> <span class="toc-text"> 计算机与操作系统</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFlinux"><span class="toc-number">3.2.</span> <span class="toc-text"> 什么是Linux？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%88%91%E4%BB%AC%E8%BA%AB%E8%BE%B9%E7%9A%84-linux"><span class="toc-number">3.3.</span> <span class="toc-text"> 我们身边的 Linux</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%A9%E8%87%AA%E5%B7%B1%E7%9A%84%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%94%A8%E4%B8%8A-linux"><span class="toc-number">3.4.</span> <span class="toc-text"> 让自己的计算机用上 Linux</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%9D%E8%80%83%E9%A2%98"><span class="toc-number">3.5.</span> <span class="toc-text"> 思考题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8B%93%E5%B1%95%E9%98%85%E8%AF%BB"><span class="toc-number">3.6.</span> <span class="toc-text"> 拓展阅读</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E4%B8%AA%E6%80%A7%E5%8C%96%E9%85%8D%E7%BD%AE%E4%B8%8E%E5%BB%BA%E7%AB%99%E4%BD%93%E9%AA%8C"><span class="toc-number">4.</span> <span class="toc-text"> 二：个性化配置与建站体验</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A1%8C%E9%9D%A2%E7%8E%AF%E5%A2%83"><span class="toc-number">4.1.</span> <span class="toc-text"> 桌面环境</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%91%BD%E4%BB%A4%E8%A1%8C%E6%93%8D%E4%BD%9C"><span class="toc-number">4.2.</span> <span class="toc-text"> 命令行操作</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E7%94%A8%E5%91%BD%E4%BB%A4%E8%A1%8C"><span class="toc-number">4.2.1.</span> <span class="toc-text"> 为什么要用命令行</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#shell"><span class="toc-number">4.2.2.</span> <span class="toc-text"> shell</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%90%AD%E5%BB%BA%E7%AE%80%E6%98%93%E7%9A%84%E7%BD%91%E7%AB%99"><span class="toc-number">5.</span> <span class="toc-text"> 搭建简易的网站</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%9D%E8%80%83%E9%A2%98-2"><span class="toc-number">5.1.</span> <span class="toc-text"> 思考题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8B%93%E5%B1%95%E9%98%85%E8%AF%BB-2"><span class="toc-number">5.2.</span> <span class="toc-text"> 拓展阅读</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85%E4%B8%8E%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C"><span class="toc-number">6.</span> <span class="toc-text"> 三：软件安装与文件操作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85"><span class="toc-number">6.1.</span> <span class="toc-text"> 软件安装</span></a></li></ol></li></ol>
       
   </div>
 </div>
@@ -758,9 +846,9 @@
           url: "https://ti-fdgg.github.io/2025/02/05/Linux-Learning-Notes/",
           excerpt: "",
           description: "",
-          stripContent: "主要通过Linux101来学习Linux的基础知识，以及一些常用的命令。感谢这篇文档的编辑者的辛勤付出。 ",
+          stripContent: "主要通过Linux101来学习Linux的基础知识，以及一些常用的命令。感谢这篇文档的编辑者的辛勤付出。 本笔记结构计划仿照Linux101的组织结构，从零到附录每一章节的学习记录一章节的笔记。另外，也在文章开头设置负一章节，用于发表我对于记笔记这件事情的看法。  负一：记笔记  为什么要记笔记？（待整理修改） 更新：我之前有一个毛病就是看一篇文档看到底部，有时候就会思考自己看了什么，然后就又向上翻自己记住了什么。或者是长时间看一系列的文档，经常会在开始新的一段看文档的过程中翻看上一段时间看过的",
           date: "Wed Feb 05 2025 13:41:58 GMT+0800",
-          updated: "Wed Feb 05 2025 14:22:26 GMT+0800",
+          updated: "Thu Feb 06 2025 21:23:14 GMT+0800",
           cover: "/images/banner/new_ban.webp",
         };
       </script>
