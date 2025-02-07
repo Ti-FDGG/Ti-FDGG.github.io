@@ -12,7 +12,7 @@
   <script>window.REIMU_CONFIG = {};window.REIMU_CONFIG.icon_font = '4552607_bq08450reo';window.REIMU_CONFIG.clipboard_tips = {"success":"复制成功(*^▽^*)","fail":"复制失败 (ﾟ⊿ﾟ)ﾂ","copyright":{"enable":false,"count":50,"content":"本文版权：本博客所有文章除特别声明外，均采用 BY-NC-SA 许可协议。转载请注明出处！"}};window.REIMU_CONFIG.code_block = {"expand":true};</script>
   
   <title>
-    归档: 2024 |
+    Docker-Learning-Notes |
     
     Timothy&#39;s Blog
   </title>
@@ -27,17 +27,19 @@
 
   
   
-    <meta name="description" content="^^;">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Timothy&#39;s Blog">
-<meta property="og:url" content="https://ti-fdgg.github.io/archives/2024/index.html">
+    <meta name="description" content="上级文档">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Docker-Learning-Notes">
+<meta property="og:url" content="https://ti-fdgg.github.io/2025/02/07/Docker-Learning-Notes/index.html">
 <meta property="og:site_name" content="Timothy&#39;s Blog">
-<meta property="og:description" content="^^;">
+<meta property="og:description" content="上级文档">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://ti-fdgg.github.io/images/banner.webp">
+<meta property="article:published_time" content="2025-02-07T07:52:51.000Z">
+<meta property="article:modified_time" content="2025-02-07T07:53:16.538Z">
 <meta property="article:author" content="Mothy Ti">
+<meta property="article:tag" content="Linux">
+<meta property="article:tag" content="Docker">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://ti-fdgg.github.io/images/banner.webp">
   
   
     <link rel="alternate" href="/atom.xml" title="Timothy's Blog" type="application/atom+xml">
@@ -170,7 +172,7 @@
       
     </picture>
     
-      <img fetchpriority="high" src="/images/banner/new_ban.webp" alt="">
+      <img fetchpriority="high" src="/images/banner/new_ban.webp" alt="Docker-Learning-Notes">
     
   
   <div id="header-outer">
@@ -179,15 +181,13 @@
         
         
           <a href="/" id="logo">
-            <h1 data-aos="slide-up">归档</h1>
+            <h1 data-aos="slide-up">Docker-Learning-Notes</h1>
           </a>
         
       
       
         
         <h2 id="subtitle-wrap" data-aos="slide-down">
-          
-            <a href="/" id="subtitle">2024</a>
           
         </h2>
       
@@ -215,10 +215,19 @@
       list-folded="false"
     ></meting-js>
   
-  <div class="sidebar-wrapper ">
+  <div class="sidebar-wrapper wrap-sticky">
     <div class="sidebar-wrap" data-aos="fade-up">
       
-        <div class="sidebar-author">
+        <div class="sidebar-toc-sidebar"><div class="sidebar-toc">
+  <h3 class="toc-title">文章目录</h3>
+  <div class="sidebar-toc-wrapper toc-div-class" >
+      
+        
+      
+  </div>
+</div>
+</div>
+        <div class="sidebar-common-sidebar hidden"><div class="sidebar-author">
   <img data-src="/avatar/new_av.webp" data-sizes="auto" alt="Mothy Ti" class="lazyload">
   <div class="sidebar-author-name">Mothy Ti</div>
   <div class="sidebar-description">^^;</div>
@@ -285,187 +294,128 @@
     
   
 </div>
-
+</div>
       
+      
+        <div class="sidebar-btn-wrapper" style="position:static">
+          <div class="sidebar-toc-btn current"></div>
+          <div class="sidebar-common-btn"></div>
+        </div>
       
     </div>
   </div>
 
   <div class="sidebar-widget">
   
-    
-      
-  <div class="widget-wrapper">
-    <div class="widget-wrap" data-aos="fade-up">
-      <h3 class="widget-title">分类</h3>
-      <div class="widget">
-        <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B7%B2%E5%AE%8C%E7%BB%93/">已完结</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B7%B2%E5%AE%8C%E7%BB%93/%E6%9D%82%E8%B0%88/">杂谈</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%9B%B4%E6%96%B0%E4%B8%AD/">更新中</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%9B%B4%E6%96%B0%E4%B8%AD/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%9B%B4%E6%96%B0%E4%B8%AD/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%8A%80%E6%9C%AF/">计算机技术</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%9B%B4%E6%96%B0%E4%B8%AD/%E6%9D%82%E8%B0%88/">杂谈</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%9B%B4%E6%96%B0%E4%B8%AD/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%8A%80%E6%9C%AF/">计算机技术</a></li></ul></li></ul>
-      </div>
-    </div>
-  </div>
-
-
-    
-      
-  <div class="widget-wrapper">
-    <div class="widget-wrap" data-aos="fade-up">
-      <h3 class="widget-title">标签</h3>
-      <div class="widget">
-        <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CS/" rel="tag">CS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Docker/" rel="tag">Docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MIT-Missing-Semester/" rel="tag">MIT-Missing-Semester</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Outlook/" rel="tag">Outlook</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Shell/" rel="tag">Shell</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vim/" rel="tag">Vim</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8D%9A%E5%AE%A2-Blog/" rel="tag">博客&#x2F;Blog</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%90%90%E6%A7%BD/" rel="tag">吐槽</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%9B%9E%E5%BF%86/" rel="tag">回忆</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8A%A5%E9%94%99-Error/" rel="tag">报错&#x2F;Error</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%AA%A8%E6%8A%98/" rel="tag">骨折</a></li></ul>
-      </div>
-    </div>
-  </div>
-
-
-    
-      
-  <div class="widget-wrapper">
-    <div class="widget-wrap" data-aos="fade-up">
-      <h3 class="widget-title">标签云</h3>
-      <div class="widget tagcloud">
-        <a href="/tags/CS/" style="font-size: 10px;">CS</a> <a href="/tags/Docker/" style="font-size: 15px;">Docker</a> <a href="/tags/Hexo/" style="font-size: 15px;">Hexo</a> <a href="/tags/Linux/" style="font-size: 20px;">Linux</a> <a href="/tags/MIT-Missing-Semester/" style="font-size: 10px;">MIT-Missing-Semester</a> <a href="/tags/Outlook/" style="font-size: 10px;">Outlook</a> <a href="/tags/Shell/" style="font-size: 15px;">Shell</a> <a href="/tags/Vim/" style="font-size: 15px;">Vim</a> <a href="/tags/%E5%8D%9A%E5%AE%A2-Blog/" style="font-size: 15px;">博客/Blog</a> <a href="/tags/%E5%90%90%E6%A7%BD/" style="font-size: 10px;">吐槽</a> <a href="/tags/%E5%9B%9E%E5%BF%86/" style="font-size: 10px;">回忆</a> <a href="/tags/%E6%8A%A5%E9%94%99-Error/" style="font-size: 10px;">报错/Error</a> <a href="/tags/%E9%AA%A8%E6%8A%98/" style="font-size: 10px;">骨折</a>
-      </div>
-    </div>
-  </div>
-
-
-    
-  
   </div>
 </aside>
 
-          <section id="main">
-<div class="archives-outer-wrap" data-aos="fade-up">
-  <div class="tag-wrap">
-    
-      <div class="archives-tag-list-item" data-aos="zoom-in">
-        <a class="archives-tag-list-link" href="/tags/MIT-Missing-Semester/">MIT-Missing-Semester</a>
-      </div>
-    
-      <div class="archives-tag-list-item" data-aos="zoom-in">
-        <a class="archives-tag-list-link" href="/tags/Shell/">Shell</a>
-      </div>
-    
-      <div class="archives-tag-list-item" data-aos="zoom-in">
-        <a class="archives-tag-list-link" href="/tags/Linux/">Linux</a>
-      </div>
-    
-      <div class="archives-tag-list-item" data-aos="zoom-in">
-        <a class="archives-tag-list-link" href="/tags/CS/">CS</a>
-      </div>
-    
-      <div class="archives-tag-list-item" data-aos="zoom-in">
-        <a class="archives-tag-list-link" href="/tags/Docker/">Docker</a>
-      </div>
-    
-      <div class="archives-tag-list-item" data-aos="zoom-in">
-        <a class="archives-tag-list-link" href="/tags/Hexo/">Hexo</a>
-      </div>
-    
-      <div class="archives-tag-list-item" data-aos="zoom-in">
-        <a class="archives-tag-list-link" href="/tags/%E5%8D%9A%E5%AE%A2-Blog/">博客/Blog</a>
-      </div>
-    
-      <div class="archives-tag-list-item" data-aos="zoom-in">
-        <a class="archives-tag-list-link" href="/tags/%E6%8A%A5%E9%94%99-Error/">报错/Error</a>
-      </div>
-    
-      <div class="archives-tag-list-item" data-aos="zoom-in">
-        <a class="archives-tag-list-link" href="/tags/Vim/">Vim</a>
-      </div>
-    
-      <div class="archives-tag-list-item" data-aos="zoom-in">
-        <a class="archives-tag-list-link" href="/tags/Outlook/">Outlook</a>
-      </div>
-    
-      <div class="archives-tag-list-item" data-aos="zoom-in">
-        <a class="archives-tag-list-link" href="/tags/%E5%90%90%E6%A7%BD/">吐槽</a>
-      </div>
-    
-      <div class="archives-tag-list-item" data-aos="zoom-in">
-        <a class="archives-tag-list-link" href="/tags/%E9%AA%A8%E6%8A%98/">骨折</a>
-      </div>
-    
-      <div class="archives-tag-list-item" data-aos="zoom-in">
-        <a class="archives-tag-list-link" href="/tags/%E5%9B%9E%E5%BF%86/">回忆</a>
-      </div>
-    
+          <section id="main"><article id="post-Docker-Learning-Notes" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-inner" data-aos="fade-up">
+    <div class="article-meta">
+      <div class="article-date">
+  <a href="/2025/02/07/Docker-Learning-Notes/" class="article-date-link" data-aos="zoom-in">
+    <time datetime="2025-02-07T07:52:51.000Z" itemprop="datePublished">2025-02-07</time>
+    <time style="display: none;" id="post-update-time">2025-02-07</time>
+  </a>
+</div>
+
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E6%9B%B4%E6%96%B0%E4%B8%AD/" data-aos="zoom-in">更新中</a><a class="article-category-link" href="/categories/%E6%9B%B4%E6%96%B0%E4%B8%AD/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" data-aos="zoom-in">学习笔记</a><a class="article-category-link" href="/categories/%E6%9B%B4%E6%96%B0%E4%B8%AD/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%8A%80%E6%9C%AF/" data-aos="zoom-in">计算机技术</a>
   </div>
-  <div class="category-wrap">
+
+
+    </div>
+    <div class="hr-line"></div>
     
-      <div class="archives-category-list-item" data-aos="zoom-in">
-        <a class="archives-category-list-link" href="/categories/%E6%9B%B4%E6%96%B0%E4%B8%AD/">更新中</a>
-      </div>
-    
-      <div class="archives-category-list-item" data-aos="zoom-in">
-        <a class="archives-category-list-link" href="/categories/%E6%9B%B4%E6%96%B0%E4%B8%AD/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a>
-      </div>
-    
-      <div class="archives-category-list-item" data-aos="zoom-in">
-        <a class="archives-category-list-link" href="/categories/%E5%B7%B2%E5%AE%8C%E7%BB%93/">已完结</a>
-      </div>
-    
-      <div class="archives-category-list-item" data-aos="zoom-in">
-        <a class="archives-category-list-link" href="/categories/%E6%9B%B4%E6%96%B0%E4%B8%AD/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%8A%80%E6%9C%AF/">计算机技术</a>
-      </div>
-    
-      <div class="archives-category-list-item" data-aos="zoom-in">
-        <a class="archives-category-list-link" href="/categories/%E6%9B%B4%E6%96%B0%E4%B8%AD/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%8A%80%E6%9C%AF/">计算机技术</a>
-      </div>
-    
-      <div class="archives-category-list-item" data-aos="zoom-in">
-        <a class="archives-category-list-link" href="/categories/%E5%B7%B2%E5%AE%8C%E7%BB%93/%E6%9D%82%E8%B0%88/">杂谈</a>
-      </div>
-    
-      <div class="archives-category-list-item" data-aos="zoom-in">
-        <a class="archives-category-list-link" href="/categories/%E6%9B%B4%E6%96%B0%E4%B8%AD/%E6%9D%82%E8%B0%88/">杂谈</a>
-      </div>
-    
-  </div>
-  
-  
-    
-    
+
+    <div class="e-content article-entry" itemprop="articleBody">
       
       
-      <section class="archives-wrap" data-aos="fade-up">
-        <div class="archive-year-wrap">
-          <a href="/archives/2024" class="archive-year">2024</a>
-        </div>
-        <ul>
-          
-          <li class="archive-article">
-  <div class="archive-article-date-wrap">
-    <a href="/2024/08/18/MIT-Missing-Semester-Notes/">
-      <time class="dt-published" datetime="2024-08-18T01:27:29.000Z" itemprop="datePublished">08-18</time>
+        <p><a href="https://ti-fdgg.github.io/2025/02/05/Linux-Learning-Notes/">上级文档</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+        <div class="share-wrapper">
+  
+    <a href="http://connect.qq.com/widget/shareqq/index.html?url=https%3A%2F%2Fti-fdgg.github.io%2F2025%2F02%2F07%2FDocker-Learning-Notes%2F&amp;title=Docker-Learning-Notes&amp;desc=Docker-Learning-Notes&amp;source=https%3A%2F%2Fti-fdgg.github.io" target="_blank" rel="noopener noreferrer" title="Docker-Learning-Notes">
+      <div class="share-icon icon icon-qq">
+        
+      </div>
     </a>
+  
+    <a href="javascript:;"  title="Docker-Learning-Notes">
+      <div class="share-icon icon icon-weixin">
+        
+          <div id="share-weixin">
+            <div class="share-weixin-dom">
+              <div class="share-weixin-content">
+                <img id="share-weixin-banner"> 
+                <div id="share-weixin-title"></div>
+                <div id="share-weixin-desc"></div>
+              </div>
+              <div class="share-weixin-qrcode">
+                <div class="share-weixin-info">
+                  <div id="share-weixin-author"></div>
+                  <div id="share-weixin-theme">Powered By hexo-theme-reimu</div>
+                </div>
+                <img id="share-weixin-qr" >
+              </div>
+            </div>
+            <div class="share-weixin-canvas"></div>
+          </div>
+        
+      </div>
+    </a>
+  
+</div>
+      
+      
+      
+      
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item" data-aos="zoom-in"><a class="article-tag-list-link" href="/tags/Docker/" rel="tag">Docker</a></li><li class="article-tag-list-item" data-aos="zoom-in"><a class="article-tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li></ul>
+
+
+    </footer>
   </div>
   
-    <a class="archive-article-title" href="/2024/08/18/MIT-Missing-Semester-Notes/">MIT-Missing-Semester 笔记</a>
-  
-</li>
-
-          
+  <nav id="article-nav" data-aos="fade-up">
     
     
-          <li class="archive-article">
-  <div class="archive-article-date-wrap">
-    <a href="/2024/08/18/questions-and-solutions-while-bulid-blog/">
-      <time class="dt-published" datetime="2024-08-17T16:00:00.000Z" itemprop="datePublished">08-18</time>
-    </a>
-  </div>
-  
-    <a class="archive-article-title" href="/2024/08/18/questions-and-solutions-while-bulid-blog/">一些搭建博客时遇上的问题和对应的解决方案</a>
-  
-</li>
+    <div class="article-nav-link-wrap article-nav-link-right">
+      
+        
+        
+          <img data-src="/covers/thbwiki.jpg" data-sizes="auto" alt="Vim学习笔记" class="lazyload">
+        
+      
+      <a href="/2025/02/07/Vim-Learning-Notes/"></a>
+      <div class="article-nav-caption">后一篇</div>
+      <h3 class="article-nav-title">
+        
+          Vim学习笔记
+        
+      </h3>
+    </div>
+    
+  </nav>
 
-          
-          
-        </ul>
-      </section>
-  
-  </div>
 
+</article>
+
+
+
+
+
+  <div id="comments" class="gscomment giscus" data-aos="fade-up"></div>
 
 
 </section>
@@ -524,7 +474,16 @@
       <nav id="mobile-nav">
   <div class="sidebar-wrap">
     
-      <div class="sidebar-author">
+      <div class="sidebar-toc-sidebar"><div class="sidebar-toc">
+  <h3 class="toc-title">文章目录</h3>
+  <div class="sidebar-toc-wrapper toc-div-class" >
+      
+        
+      
+  </div>
+</div>
+</div>
+      <div class="sidebar-common-sidebar hidden"><div class="sidebar-author">
   <img data-src="/avatar/new_av.webp" data-sizes="auto" alt="Mothy Ti" class="lazyload">
   <div class="sidebar-author-name">Mothy Ti</div>
   <div class="sidebar-description">^^;</div>
@@ -591,9 +550,14 @@
     
   
 </div>
-
+</div>
     
   </div>
+  
+    <div class="sidebar-btn-wrapper">
+      <div class="sidebar-toc-btn current"></div>
+      <div class="sidebar-common-btn"></div>
+    </div>
   
 </nav>
 
@@ -783,11 +747,109 @@
 
 <div id="lazy-script">
   <div>
+    
+      
+      
+      <script data-pjax>
+        window.REIMU_POST = {
+          author: "Mothy Ti",
+          title: "Docker-Learning-Notes",
+          url: "https://ti-fdgg.github.io/2025/02/07/Docker-Learning-Notes/",
+          excerpt: "",
+          description: "",
+          stripContent: "上级文档 ",
+          date: "Fri Feb 07 2025 15:52:51 GMT+0800",
+          updated: "Fri Feb 07 2025 15:53:16 GMT+0800",
+          cover: "/images/banner/new_ban.webp",
+        };
+      </script>
        
     
     
       
+        
+<script src="/js/insert_highlight.js" data-pjax></script>
+
+        
+          
+<script src="https://npm.webcache.cn/html-to-image@1.11.11/dist/html-to-image.js" integrity="sha384-UbfRVKN3&#x2F;elS1r7JcK2FhmPP+KlJ4CvYwbyYD7tH+uTkbT9bNJr9eJeQ0FoFbAgz" crossorigin="anonymous" defer data-pjax></script>
+
+          
+<script src="https://npm.webcache.cn/qrcode@1.4.4/build/qrcode.min.js" integrity="sha384-0RsG1yo&#x2F;crf&#x2F;1Qc14sho26SXXOTngNCjgJw7fuvXBt9W&#x2F;OChF&#x2F;Ijx+aUuBDqQwEk" crossorigin="anonymous" defer data-pjax></script>
+
+        
+      
     
+    
+      <script type="module" data-pjax>
+        const PhotoSwipeLightbox = (await safeImport("https://npm.webcache.cn/photoswipe@5.4.4/dist/photoswipe-lightbox.esm.min.js", "sha384-DiL6M/gG+wmTxmCRZyD1zee6lIhawn5TGvED0FOh7fXcN9B0aZ9dexSF/N6lrZi/")).default;
+        
+        const pswp = () => {
+          if (_$$('.article-entry a.article-gallery-item').length > 0) {
+            new PhotoSwipeLightbox({
+              gallery: '.article-entry',
+              children: 'a.article-gallery-item',
+              pswpModule: () => safeImport("https://npm.webcache.cn/photoswipe@5.4.4/dist/photoswipe.esm.min.js", "sha384-WkkO3GCmgkC3VQWpaV8DqhKJqpzpF9JoByxDmnV8+oTJ7m3DfYEWX1fu1scuS4+s")
+            }).init();
+          }
+          if(_$$('.article-gallery a.article-gallery-item').length > 0) {
+            new PhotoSwipeLightbox({
+              gallery: '.article-gallery',
+              children: 'a.article-gallery-item',
+              pswpModule: () => safeImport("https://npm.webcache.cn/photoswipe@5.4.4/dist/photoswipe.esm.min.js", "sha384-WkkO3GCmgkC3VQWpaV8DqhKJqpzpF9JoByxDmnV8+oTJ7m3DfYEWX1fu1scuS4+s")
+            }).init();
+          }
+          window.lightboxStatus = 'done';
+          window.removeEventListener('lightbox:ready', pswp);
+        }
+        if(window.lightboxStatus === 'ready') {
+          pswp()
+        } else {
+          window.addEventListener('lightbox:ready', pswp);
+        }
+      </script>
+      
+
+
+
+
+
+
+
+
+  <script data-pjax>
+    var giscusContainer = document.querySelector('.giscus');
+    if (giscusContainer) {
+      const giscusScript = document.createElement('script');
+      const domMode = document.documentElement.getAttribute("data-theme");
+      giscusScript.src = 'https://giscus.app/client.js';
+      giscusScript.setAttribute('data-repo', 'Ti-FDGG/ti-fdgg.github.io');
+      giscusScript.setAttribute('data-repo-id', 'R_kgDOMj6mEA');
+      giscusScript.setAttribute('data-category', 'Announcements'); 
+      giscusScript.setAttribute('data-category-id', 'DIC_kwDOMj6mEM4CmnEi');
+      giscusScript.setAttribute('data-mapping', '0');
+      giscusScript.setAttribute('data-strict', '0');
+      giscusScript.setAttribute('data-reactions-enabled', '1');
+      giscusScript.setAttribute('data-emit-metadata', '0');
+      giscusScript.setAttribute('data-input-position', 'bottom');
+      giscusScript.setAttribute('data-theme', domMode === 'dark' ? 'dark' : 'light');
+      giscusScript.setAttribute('data-lang', 'zh-CN');
+      giscusScript.setAttribute('crossorigin', 'anonymous');
+      giscusScript.async = true;
+      giscusContainer.appendChild(giscusScript);
+      document.body.addEventListener('light-theme-set', () => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: { setConfig: { theme: 'light' } } }, 'https://giscus.app');
+      });
+      document.body.addEventListener('dark-theme-set', () => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: { setConfig: { theme: 'dark' } } }, 'https://giscus.app');
+      });
+    }
+  </script>
+
     
   </div>
 </div>
