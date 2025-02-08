@@ -12,7 +12,7 @@
   <script>window.REIMU_CONFIG = {};window.REIMU_CONFIG.icon_font = '4552607_bq08450reo';window.REIMU_CONFIG.clipboard_tips = {"success":"复制成功(*^▽^*)","fail":"复制失败 (ﾟ⊿ﾟ)ﾂ","copyright":{"enable":false,"count":50,"content":"本文版权：本博客所有文章除特别声明外，均采用 BY-NC-SA 许可协议。转载请注明出处！"}};window.REIMU_CONFIG.code_block = {"expand":true};</script>
   
   <title>
-    Linux学习笔记 |
+    Linux 学习笔记 |
     
     Timothy&#39;s Blog
   </title>
@@ -29,18 +29,20 @@
   
     <meta name="description" content="主要通过Linux101来学习Linux的基础知识，以及一些常用的命令。感谢这篇文档的编辑者的辛勤付出。 本笔记结构计划仿照Linux101的组织结构，从零到附录每一章节的学习记录一章节的笔记。另外，也在文章开头设置负一章节，用于发表我对于记笔记这件事情的看法。  负一：记笔记  为什么要记笔记？（待整理修改） 更新：我之前有一个毛病就是看一篇文档看到底部，有时候就会思考自己看了什么，然后就又向上">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Linux学习笔记">
+<meta property="og:title" content="Linux 学习笔记">
 <meta property="og:url" content="https://ti-fdgg.github.io/2025/02/05/Linux-Learning-Notes/index.html">
 <meta property="og:site_name" content="Timothy&#39;s Blog">
 <meta property="og:description" content="主要通过Linux101来学习Linux的基础知识，以及一些常用的命令。感谢这篇文档的编辑者的辛勤付出。 本笔记结构计划仿照Linux101的组织结构，从零到附录每一章节的学习记录一章节的笔记。另外，也在文章开头设置负一章节，用于发表我对于记笔记这件事情的看法。  负一：记笔记  为什么要记笔记？（待整理修改） 更新：我之前有一个毛病就是看一篇文档看到底部，有时候就会思考自己看了什么，然后就又向上">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://ti-fdgg.github.io/2025/02/05/Linux-Learning-Notes/hacker.gif">
+<meta property="og:image" content="https://ti-fdgg.github.io/2025/02/05/Linux-Learning-Notes/signal_slide.png">
+<meta property="og:image" content="https://ti-fdgg.github.io/2025/02/05/Linux-Learning-Notes/jobs.png">
 <meta property="article:published_time" content="2025-02-05T05:41:58.000Z">
-<meta property="article:modified_time" content="2025-02-07T07:51:42.076Z">
+<meta property="article:modified_time" content="2025-02-08T04:45:44.397Z">
 <meta property="article:author" content="Mothy Ti">
-<meta property="article:tag" content="Shell">
 <meta property="article:tag" content="Linux">
 <meta property="article:tag" content="Docker">
+<meta property="article:tag" content="Shell">
 <meta property="article:tag" content="Vim">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://ti-fdgg.github.io/2025/02/05/Linux-Learning-Notes/hacker.gif">
@@ -176,7 +178,7 @@
       
     </picture>
     
-      <img fetchpriority="high" src="/images/banner/new_ban.webp" alt="Linux学习笔记">
+      <img fetchpriority="high" src="/images/banner/new_ban.webp" alt="Linux 学习笔记">
     
   
   <div id="header-outer">
@@ -185,7 +187,7 @@
         
         
           <a href="/" id="logo">
-            <h1 data-aos="slide-up">Linux学习笔记</h1>
+            <h1 data-aos="slide-up">Linux 学习笔记</h1>
           </a>
         
       
@@ -226,7 +228,7 @@
   <h3 class="toc-title">文章目录</h3>
   <div class="sidebar-toc-wrapper toc-div-class" >
       
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%B4%9F%E4%B8%80%E8%AE%B0%E7%AC%94%E8%AE%B0"><span class="toc-number">1.</span> <span class="toc-text"> 负一：记笔记</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E8%AE%B0%E7%AC%94%E8%AE%B0%E5%BE%85%E6%95%B4%E7%90%86%E4%BF%AE%E6%94%B9"><span class="toc-number">1.1.</span> <span class="toc-text"> 为什么要记笔记？（待整理修改）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%88%91%E4%BC%9A%E6%80%8E%E6%A0%B7%E5%8E%BB%E8%AE%B0%E7%AC%94%E8%AE%B0%E5%BE%85%E6%95%B4%E7%90%86%E4%BF%AE%E6%94%B9"><span class="toc-number">1.2.</span> <span class="toc-text"> 我会怎样去记笔记？（待整理修改）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9B%B6%E6%AC%A2%E8%BF%8E"><span class="toc-number">2.</span> <span class="toc-text"> 零：欢迎</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E5%88%9D%E8%AF%86linux"><span class="toc-number">3.</span> <span class="toc-text"> 一：初识Linux</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%8E%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F"><span class="toc-number">3.1.</span> <span class="toc-text"> 计算机与操作系统</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFlinux"><span class="toc-number">3.2.</span> <span class="toc-text"> 什么是Linux？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%88%91%E4%BB%AC%E8%BA%AB%E8%BE%B9%E7%9A%84-linux"><span class="toc-number">3.3.</span> <span class="toc-text"> 我们身边的 Linux</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%A9%E8%87%AA%E5%B7%B1%E7%9A%84%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%94%A8%E4%B8%8A-linux"><span class="toc-number">3.4.</span> <span class="toc-text"> 让自己的计算机用上 Linux</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%9D%E8%80%83%E9%A2%98"><span class="toc-number">3.5.</span> <span class="toc-text"> 思考题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8B%93%E5%B1%95%E9%98%85%E8%AF%BB"><span class="toc-number">3.6.</span> <span class="toc-text"> 拓展阅读</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E4%B8%AA%E6%80%A7%E5%8C%96%E9%85%8D%E7%BD%AE%E4%B8%8E%E5%BB%BA%E7%AB%99%E4%BD%93%E9%AA%8C"><span class="toc-number">4.</span> <span class="toc-text"> 二：个性化配置与建站体验</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A1%8C%E9%9D%A2%E7%8E%AF%E5%A2%83"><span class="toc-number">4.1.</span> <span class="toc-text"> 桌面环境</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%91%BD%E4%BB%A4%E8%A1%8C%E6%93%8D%E4%BD%9C"><span class="toc-number">4.2.</span> <span class="toc-text"> 命令行操作</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E7%94%A8%E5%91%BD%E4%BB%A4%E8%A1%8C"><span class="toc-number">4.2.1.</span> <span class="toc-text"> 为什么要用命令行</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#shell"><span class="toc-number">4.2.2.</span> <span class="toc-text"> shell</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%90%AD%E5%BB%BA%E7%AE%80%E6%98%93%E7%9A%84%E7%BD%91%E7%AB%99"><span class="toc-number">4.3.</span> <span class="toc-text"> 搭建简易的网站</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%9D%E8%80%83%E9%A2%98-2"><span class="toc-number">4.4.</span> <span class="toc-text"> 思考题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8B%93%E5%B1%95%E9%98%85%E8%AF%BB-2"><span class="toc-number">4.5.</span> <span class="toc-text"> 拓展阅读</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85%E4%B8%8E%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C"><span class="toc-number">5.</span> <span class="toc-text"> 三：软件安装与文件操作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85"><span class="toc-number">5.1.</span> <span class="toc-text"> 软件安装</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BA%94%E7%94%A8%E5%95%86%E5%BA%97"><span class="toc-number">5.1.1.</span> <span class="toc-text"> 应用商店</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8C%85%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F%E8%BD%AF%E4%BB%B6%E5%8C%85%E7%AE%A1%E7%90%86%E5%99%A8"><span class="toc-number">5.1.2.</span> <span class="toc-text"> 包管理系统&#x2F;软件包管理器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%98%E6%96%B9%E8%BD%AF%E4%BB%B6%E6%BA%90%E4%B8%8E%E7%AC%AC%E4%B8%89%E6%96%B9%E8%BD%AF%E4%BB%B6%E6%BA%90"><span class="toc-number">5.1.3.</span> <span class="toc-text"> 官方软件源与第三方软件源</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9B%B4%E6%96%B0%E8%BD%AF%E4%BB%B6%E5%88%97%E8%A1%A8%E4%B8%8E%E6%9B%B4%E6%96%B0%E8%BD%AF%E4%BB%B6"><span class="toc-number">5.1.4.</span> <span class="toc-text"> 更新软件列表与更新软件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%89%8B%E5%8A%A8%E5%AE%89%E8%A3%85"><span class="toc-number">5.1.5.</span> <span class="toc-text"> 手动安装</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E9%A2%84%E7%BC%96%E8%AF%91%E5%8F%AF%E6%89%A7%E8%A1%8C%E6%96%87%E4%BB%B6"><span class="toc-number">5.1.6.</span> <span class="toc-text"> 安装预编译可执行文件</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%93%8D%E4%BD%9C%E6%96%87%E4%BB%B6%E4%B8%8E%E7%9B%AE%E5%BD%95"><span class="toc-number">5.2.</span> <span class="toc-text"> 操作文件与目录</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8-tar-%E6%93%8D%E4%BD%9C%E5%AD%98%E6%A1%A3-%E5%8E%8B%E7%BC%A9%E6%96%87%E4%BB%B6"><span class="toc-number">5.3.</span> <span class="toc-text"> 使用 tar 操作存档、压缩文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BD%AF%E4%BB%B6%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%87%E6%A1%A3"><span class="toc-number">5.4.</span> <span class="toc-text"> 软件的使用文档</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8B%93%E5%B1%95%E9%98%85%E8%AF%BB-3"><span class="toc-number">5.5.</span> <span class="toc-text"> 拓展阅读</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#vim"><span class="toc-number">5.5.1.</span> <span class="toc-text"> Vim</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%ABdocker"><span class="toc-number">6.</span> <span class="toc-text"> 八：Docker</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%9D%E8%80%83%E9%A2%98%E8%A7%A3%E7%AD%94"><span class="toc-number">6.1.</span> <span class="toc-text"> 思考题解答</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%99%84%E5%BD%95"><span class="toc-number">7.</span> <span class="toc-text"> 附录</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%84%9F%E6%83%B3%E4%B8%8E%E5%90%90%E6%A7%BD"><span class="toc-number">7.1.</span> <span class="toc-text"> 感想与吐槽</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2025%E5%B9%B42%E6%9C%887%E6%97%A5113757"><span class="toc-number">7.1.1.</span> <span class="toc-text"> 2025年2月7日11:37:57</span></a></li></ol></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%B4%9F%E4%B8%80%E8%AE%B0%E7%AC%94%E8%AE%B0"><span class="toc-number">1.</span> <span class="toc-text"> 负一：记笔记</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E8%AE%B0%E7%AC%94%E8%AE%B0%E5%BE%85%E6%95%B4%E7%90%86%E4%BF%AE%E6%94%B9"><span class="toc-number">1.1.</span> <span class="toc-text"> 为什么要记笔记？（待整理修改）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%88%91%E4%BC%9A%E6%80%8E%E6%A0%B7%E5%8E%BB%E8%AE%B0%E7%AC%94%E8%AE%B0%E5%BE%85%E6%95%B4%E7%90%86%E4%BF%AE%E6%94%B9"><span class="toc-number">1.2.</span> <span class="toc-text"> 我会怎样去记笔记？（待整理修改）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9B%B6%E6%AC%A2%E8%BF%8E"><span class="toc-number">2.</span> <span class="toc-text"> 零：欢迎</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E5%88%9D%E8%AF%86linux"><span class="toc-number">3.</span> <span class="toc-text"> 一：初识Linux</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%8E%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F"><span class="toc-number">3.1.</span> <span class="toc-text"> 计算机与操作系统</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFlinux"><span class="toc-number">3.2.</span> <span class="toc-text"> 什么是Linux？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%88%91%E4%BB%AC%E8%BA%AB%E8%BE%B9%E7%9A%84-linux"><span class="toc-number">3.3.</span> <span class="toc-text"> 我们身边的 Linux</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%A9%E8%87%AA%E5%B7%B1%E7%9A%84%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%94%A8%E4%B8%8A-linux"><span class="toc-number">3.4.</span> <span class="toc-text"> 让自己的计算机用上 Linux</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%9D%E8%80%83%E9%A2%98"><span class="toc-number">3.5.</span> <span class="toc-text"> 思考题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8B%93%E5%B1%95%E9%98%85%E8%AF%BB"><span class="toc-number">3.6.</span> <span class="toc-text"> 拓展阅读</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E4%B8%AA%E6%80%A7%E5%8C%96%E9%85%8D%E7%BD%AE%E4%B8%8E%E5%BB%BA%E7%AB%99%E4%BD%93%E9%AA%8C"><span class="toc-number">4.</span> <span class="toc-text"> 二：个性化配置与建站体验</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A1%8C%E9%9D%A2%E7%8E%AF%E5%A2%83"><span class="toc-number">4.1.</span> <span class="toc-text"> 桌面环境</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%91%BD%E4%BB%A4%E8%A1%8C%E6%93%8D%E4%BD%9C"><span class="toc-number">4.2.</span> <span class="toc-text"> 命令行操作</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E7%94%A8%E5%91%BD%E4%BB%A4%E8%A1%8C"><span class="toc-number">4.2.1.</span> <span class="toc-text"> 为什么要用命令行</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#shell"><span class="toc-number">4.2.2.</span> <span class="toc-text"> shell</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%90%AD%E5%BB%BA%E7%AE%80%E6%98%93%E7%9A%84%E7%BD%91%E7%AB%99"><span class="toc-number">4.3.</span> <span class="toc-text"> 搭建简易的网站</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%9D%E8%80%83%E9%A2%98-2"><span class="toc-number">4.4.</span> <span class="toc-text"> 思考题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8B%93%E5%B1%95%E9%98%85%E8%AF%BB-2"><span class="toc-number">4.5.</span> <span class="toc-text"> 拓展阅读</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85%E4%B8%8E%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C"><span class="toc-number">5.</span> <span class="toc-text"> 三：软件安装与文件操作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85"><span class="toc-number">5.1.</span> <span class="toc-text"> 软件安装</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BA%94%E7%94%A8%E5%95%86%E5%BA%97"><span class="toc-number">5.1.1.</span> <span class="toc-text"> 应用商店</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8C%85%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F%E8%BD%AF%E4%BB%B6%E5%8C%85%E7%AE%A1%E7%90%86%E5%99%A8"><span class="toc-number">5.1.2.</span> <span class="toc-text"> 包管理系统&#x2F;软件包管理器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%98%E6%96%B9%E8%BD%AF%E4%BB%B6%E6%BA%90%E4%B8%8E%E7%AC%AC%E4%B8%89%E6%96%B9%E8%BD%AF%E4%BB%B6%E6%BA%90"><span class="toc-number">5.1.3.</span> <span class="toc-text"> 官方软件源与第三方软件源</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9B%B4%E6%96%B0%E8%BD%AF%E4%BB%B6%E5%88%97%E8%A1%A8%E4%B8%8E%E6%9B%B4%E6%96%B0%E8%BD%AF%E4%BB%B6"><span class="toc-number">5.1.4.</span> <span class="toc-text"> 更新软件列表与更新软件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%89%8B%E5%8A%A8%E5%AE%89%E8%A3%85"><span class="toc-number">5.1.5.</span> <span class="toc-text"> 手动安装</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E9%A2%84%E7%BC%96%E8%AF%91%E5%8F%AF%E6%89%A7%E8%A1%8C%E6%96%87%E4%BB%B6"><span class="toc-number">5.1.6.</span> <span class="toc-text"> 安装预编译可执行文件</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%93%8D%E4%BD%9C%E6%96%87%E4%BB%B6%E4%B8%8E%E7%9B%AE%E5%BD%95"><span class="toc-number">5.2.</span> <span class="toc-text"> 操作文件与目录</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8-tar-%E6%93%8D%E4%BD%9C%E5%AD%98%E6%A1%A3-%E5%8E%8B%E7%BC%A9%E6%96%87%E4%BB%B6"><span class="toc-number">5.3.</span> <span class="toc-text"> 使用 tar 操作存档、压缩文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BD%AF%E4%BB%B6%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%87%E6%A1%A3"><span class="toc-number">5.4.</span> <span class="toc-text"> 软件的使用文档</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8B%93%E5%B1%95%E9%98%85%E8%AF%BB-3"><span class="toc-number">5.5.</span> <span class="toc-text"> 拓展阅读</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#vim"><span class="toc-number">5.5.1.</span> <span class="toc-text"> Vim</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E7%9A%84%E6%97%B6%E9%97%B4%E6%88%B3"><span class="toc-number">5.5.2.</span> <span class="toc-text"> 文件的时间戳</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%9D%E8%80%83%E9%A2%98%E8%A7%A3%E7%AD%94"><span class="toc-number">5.6.</span> <span class="toc-text"> 思考题解答</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88-mv-%E5%91%BD%E4%BB%A4%E4%B8%8D%E9%9C%80%E8%A6%81-r-recursive-%E5%8F%82%E6%95%B0"><span class="toc-number">5.6.1.</span> <span class="toc-text"> 为什么 mv 命令不需要 -r (recursive) 参数</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9B%E8%BF%9B%E7%A8%8B-%E5%89%8D%E5%90%8E%E5%8F%B0-%E6%9C%8D%E5%8A%A1%E4%B8%8E%E4%BE%8B%E8%A1%8C%E6%80%A7%E4%BB%BB%E5%8A%A1"><span class="toc-number">6.</span> <span class="toc-text"> 四：进程、前后台、服务与例行性任务</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%9B%E7%A8%8B"><span class="toc-number">6.1.</span> <span class="toc-text"> 进程</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BF%9B%E7%A8%8B%E4%BC%98%E5%85%88%E7%BA%A7%E4%B8%8E%E7%8A%B6%E6%80%81"><span class="toc-number">6.1.1.</span> <span class="toc-text"> 进程优先级与状态</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%A8%E6%88%B7%E8%BF%9B%E7%A8%8B%E6%8E%A7%E5%88%B6"><span class="toc-number">6.2.</span> <span class="toc-text"> 用户进程控制</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#kill-%E5%91%BD%E4%BB%A4"><span class="toc-number">6.2.1.</span> <span class="toc-text"> kill 命令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%84%B1%E7%A6%BB%E7%BB%88%E7%AB%AF"><span class="toc-number">6.2.2.</span> <span class="toc-text"> 脱离终端</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%8D%E5%8A%A1"><span class="toc-number">6.3.</span> <span class="toc-text"> 服务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8B%93%E5%B1%95%E9%98%85%E8%AF%BB-4"><span class="toc-number">6.4.</span> <span class="toc-text"> 拓展阅读</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%9D%E8%80%83%E9%A2%98%E8%A7%A3%E7%AD%94-2"><span class="toc-number">6.5.</span> <span class="toc-text"> 思考题解答</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%94%E7%94%A8%E6%88%B7%E4%B8%8E%E7%94%A8%E6%88%B7%E7%BB%84-%E6%96%87%E4%BB%B6%E6%9D%83%E9%99%90-%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E5%B1%82%E6%AC%A1%E7%BB%93%E6%9E%84"><span class="toc-number">7.</span> <span class="toc-text"> 五：用户与用户组、文件权限、文件系统层次结构</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%A8%E6%88%B7%E4%B8%8E%E7%94%A8%E6%88%B7%E7%BB%84"><span class="toc-number">7.1.</span> <span class="toc-text"> 用户与用户组</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%87%E6%8D%A2%E7%94%A8%E6%88%B7"><span class="toc-number">7.1.1.</span> <span class="toc-text"> 切换用户</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%94%A8%E6%88%B7%E7%BB%84"><span class="toc-number">7.1.2.</span> <span class="toc-text"> 用户组</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%91%BD%E4%BB%A4%E8%A1%8C%E7%9A%84%E7%94%A8%E6%88%B7%E9%85%8D%E7%BD%AE%E6%93%8D%E4%BD%9C"><span class="toc-number">7.1.3.</span> <span class="toc-text"> 命令行的用户配置操作</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E6%9D%83%E9%99%90"><span class="toc-number">7.2.</span> <span class="toc-text"> 文件权限</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E5%B1%82%E6%AC%A1%E7%BB%93%E6%9E%84"><span class="toc-number">7.3.</span> <span class="toc-text"> 文件系统层次结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8B%93%E5%B1%95%E9%98%85%E8%AF%BB-5"><span class="toc-number">7.4.</span> <span class="toc-text"> 拓展阅读</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%9D%E8%80%83%E9%A2%98%E8%A7%A3%E7%AD%94-3"><span class="toc-number">7.5.</span> <span class="toc-text"> 思考题解答</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E6%9C%8D%E5%8A%A1"><span class="toc-number">7.5.1.</span> <span class="toc-text"> 自定义服务</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BE%8B%E8%A1%8C%E6%80%A7%E4%BB%BB%E5%8A%A1"><span class="toc-number">7.5.2.</span> <span class="toc-text"> 例行性任务</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8B%93%E5%B1%95%E9%98%85%E8%AF%BB-6"><span class="toc-number">7.6.</span> <span class="toc-text"> 拓展阅读</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%9D%E8%80%83%E9%A2%98%E8%A7%A3%E7%AD%94-4"><span class="toc-number">7.7.</span> <span class="toc-text"> 思考题解答</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%ABdocker"><span class="toc-number">8.</span> <span class="toc-text"> 八：Docker</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%9D%E8%80%83%E9%A2%98%E8%A7%A3%E7%AD%94-5"><span class="toc-number">8.1.</span> <span class="toc-text"> 思考题解答</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%99%84%E5%BD%95"><span class="toc-number">9.</span> <span class="toc-text"> 附录</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%84%9F%E6%83%B3%E4%B8%8E%E5%90%90%E6%A7%BD"><span class="toc-number">9.1.</span> <span class="toc-text"> 感想与吐槽</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2025%E5%B9%B42%E6%9C%887%E6%97%A5113757"><span class="toc-number">9.1.1.</span> <span class="toc-text"> 2025年2月7日11:37:57</span></a></li></ol></li></ol></li></ol>
       
   </div>
 </div>
@@ -239,15 +241,15 @@
 <div class="sidebar-state">
   <div class="sidebar-state-article">
     <div>文章</div>
-    <div class="sidebar-state-number">8</div>
+    <div class="sidebar-state-number">9</div>
   </div>
   <div class="sidebar-state-category">
     <div>分类</div>
-    <div class="sidebar-state-number">7</div>
+    <div class="sidebar-state-number">9</div>
   </div>
   <div class="sidebar-state-tag">
     <div>标签</div>
-    <div class="sidebar-state-number">13</div>
+    <div class="sidebar-state-number">14</div>
   </div>
 </div>
 <div class="sidebar-social">
@@ -320,7 +322,7 @@
       <div class="article-date">
   <a href="/2025/02/05/Linux-Learning-Notes/" class="article-date-link" data-aos="zoom-in">
     <time datetime="2025-02-05T05:41:58.000Z" itemprop="datePublished">2025-02-05</time>
-    <time style="display: none;" id="post-update-time">2025-02-07</time>
+    <time style="display: none;" id="post-update-time">2025-02-08</time>
   </a>
 </div>
 
@@ -467,8 +469,8 @@ cmatrix：命令行界面模拟《黑客帝国》特效显示。</p>
 <code>less</code>: 显示内容，一次只显示一页，支持滚动、翻页、搜索等功能。<a target="_blank" rel="noopener" href="https://101.lug.ustc.edu.cn/Ch03/#less">常用快捷键</a></p>
 <p><code>nano</code>: 命令行文本编辑器。在终端最下方是 nano 的快捷键，^ 代表需要按下 Ctrl 键（例如，^X 就是需要同时按下 Ctrl + X）。在编辑完成后，按下 Ctrl + X，确认是否保存后即可。</p>
 <p><code>cp</code>: 拷贝。-r, -R, --recursive	递归复制，常用于复制目录。</p>
-<p>iNode、硬链接与软链接（符号链接）</p>
-<p><code>mv</code>: 移动（剪切）。</p>
+<p>inode、硬链接与软链接（符号链接）：<a href="https://ti-fdgg.github.io/2025/02/07/HardLink-and-SymbolicLink/">参见</a>。</p>
+<p><code>mv</code>: 移动（剪切）。 mv 命令不需要 -r (recursive) 参数。</p>
 <p><code>rm</code>: 删除。</p>
 <p><code>mkdir</code>: 创建目录。可用空格分隔创建的多个目录。可以创建路径。</p>
 <p><code>touch</code>: 当文件不存在时，创建文件。可用空格分隔创建的多个文件。当文件存在时，修改文件的访问时间（access time, atime）和修改时间（modification time, mtime）<br />
@@ -487,10 +489,185 @@ cmatrix：命令行界面模拟《黑客帝国》特效显示。</p>
 <code>tldr 命令名</code>: 获取精简版文档。</p>
 <h3 id="拓展阅读-3"><a class="markdownIt-Anchor" href="#拓展阅读-3"></a> 拓展阅读</h3>
 <h4 id="vim"><a class="markdownIt-Anchor" href="#vim"></a> Vim</h4>
-<p>参见<a href="">Vim学习笔记</a>。</p>
-<h2 id="八docker"><a class="markdownIt-Anchor" href="#八docker"></a> 八：Docker</h2>
-<p>参见<a href="">Docker学习笔记</a>。</p>
+<p>参见<a href="https://ti-fdgg.github.io/2025/02/07/Vim-Learning-Notes/">Vim学习笔记</a>。</p>
+<h4 id="文件的时间戳"><a class="markdownIt-Anchor" href="#文件的时间戳"></a> 文件的时间戳</h4>
+<p>使用 stat 工具可以看到一个文件有四个时间戳，分别为 Access，Modify，Change 和 Birth。</p>
+<p>atime 实际用处不大，有许多用户会在挂载磁盘时添加 noatime 参数，让操作系统在访问文件时不去更新 atime，以提高磁盘性能。</p>
+<p>mtime 仅会在文件数据变化时更新，而 ctime 会在文件数据以及文件元信息（例如权限、所有权）变化时更新。</p>
 <h3 id="思考题解答"><a class="markdownIt-Anchor" href="#思考题解答"></a> 思考题解答</h3>
+<h4 id="为什么-mv-命令不需要-r-recursive-参数"><a class="markdownIt-Anchor" href="#为什么-mv-命令不需要-r-recursive-参数"></a> 为什么 mv 命令不需要 -r (recursive) 参数</h4>
+<p>复制文件夹的过程需要创建新的文件和文件夹，而移动文件夹的操作可以看作是「重命名」。<br />
+由于目录是一个树状结构，那么移动文件夹只需要修改这个「文件夹节点」本身的位置与名称即可，不需要对文件夹内的文件（它的子树）做递归的操作。而假使在复制的时候只处理单个「文件夹节点」，那么复制得到的新文件夹中存储的文件和原文件夹存储的文件就会指向相同的文件（而不是再复制一份新的）。</p>
+<h2 id="四进程-前后台-服务与例行性任务"><a class="markdownIt-Anchor" href="#四进程-前后台-服务与例行性任务"></a> 四：进程、前后台、服务与例行性任务</h2>
+<h3 id="进程"><a class="markdownIt-Anchor" href="#进程"></a> 进程</h3>
+<p>常用的进程查看工具：htop、ps。直接调用 ps 仅会显示本终端中运行的相关进程。如果需要显示所有进程，对应的命令为 ps aux。</p>
+<p>进程标识符（PID）： 进程的唯一标识。点击 htop 的对应表头可以按进程升序或降序排序。 Shift + k （或大写 K ）可开启/关闭内核进程的显示。</p>
+<h4 id="进程优先级与状态"><a class="markdownIt-Anchor" href="#进程优先级与状态"></a> 进程优先级与状态</h4>
+<p>Priority（PRI）和 nice（NI）：用户层主要使用 Nice 值。 Nice 值越高代表一个进程对<strong>其它进程</strong>越 “nice”（友好），对应的优先级也就更低。Nice 值最高为 19，最低为 -20，通常为 0。<br />
+nice 命令在运行程序时指定优先级，而 renice 命令则可以重新指定优先级。</p>
+<p>进程状态：运行态（running）、就绪态（ready）、阻塞态（blocked）。调度时操作系统轮流选择可以运行的程序运行，构成就绪态与运行态循环。运行中的程序如果需要其他资源，则进入阻塞态；阻塞态中的程序如果得到了相应的资源，则进入就绪态。</p>
+<p>实际 Linux 系统中分类要更复杂一些。</p>
+<h3 id="用户进程控制"><a class="markdownIt-Anchor" href="#用户进程控制"></a> 用户进程控制</h3>
+<p>通过向进程发送<strong>信号</strong>实现用户进程控制。<br />
+可以通过 <code>man 7 signal</code> 查看信号的详细信息。如果显示 <code>在第 7 节中没有关于 signal 的手册页条目。</code>，则可运行以下命令：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt update &amp;&amp; sudo apt install manpages manpages-dev</span><br></pre></td></tr></table></figure>
+<p>再尝试查看。</p>
+<blockquote>
+<p>常见信号：</p>
+<ul>
+<li>
+<p>SIGINT：中断信号，通常由 Ctrl + C 发送。</p>
+</li>
+<li>
+<p>SIGKILL：终止信号，无法被捕获或忽略，强制终止进程。</p>
+</li>
+<li>
+<p>SIGTERM：终止信号，可以被捕获或忽略，通常用于优雅地终止进程。</p>
+</li>
+<li>
+<p>SIGSTOP：停止信号，暂停进程。</p>
+</li>
+<li>
+<p>SIGTSTP：挂起信号，暂停进程，通常由 Ctrl + Z 发送。</p>
+</li>
+<li>
+<p>SIGCONT：继续信号，恢复进程。</p>
+</li>
+<li>
+<p>SIGSEGV：段错误，通常由内存访问越界引起。</p>
+</li>
+</ul>
+</blockquote>
+<p><img src="signal_slide.png" alt="常见信号" /></p>
+<p>默认情况下，在 shell 中运行的命令都在前台运行，如果需要在后台运行程序，需要在最后加上 &amp; 。</p>
+<p>使用 Ctrl + Z 发送 SIGTSTP 使进程挂起。<br />
+使用 jobs 命令查看当前 shell 中的作业（即shell中的进程）。使用 fg %n 将第 n 个作业放到前台运行，使用 bg %n 将第 n 个作业放到后台运行。</p>
+<p>进程编号后的 <code>+</code> 表示当前前台作业，<code>-</code> 表示当前后台作业。<br />
+<img src="jobs.png" alt="jobs" /></p>
+<h4 id="kill-命令"><a class="markdownIt-Anchor" href="#kill-命令"></a> kill 命令</h4>
+<p>可以在 htop 中直观地发送信号。<br />
+可以使用 kill 命令发送信号。默认值为 SIGTERM，可以通过 -s 选项指定信号名称，或直接 -数字 指定信号编号。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">kill -s SIGKILL 1234</span><br><span class="line">kill -9 1234 # -9 为 SIGKILL，比较常用。</span><br><span class="line"></span><br><span class="line">kill -l # 列出所有信号</span><br></pre></td></tr></table></figure>
+<p>不同的 shell，kill 可能有不同的来源，行为可能有所不同，需要小心使用。</p>
+<p>类 kill 命令可用 apropos kill 查找。</p>
+<h4 id="脱离终端"><a class="markdownIt-Anchor" href="#脱离终端"></a> 脱离终端</h4>
+<p>终端一旦被关闭会向其中每个进程发送 SIGHUP（Signal hangup），而 SIGHUP 的默认动作即退出程序运行。可在命令前加 nohup 使其不受 SIGHUP 影响。其输出会被重定向到 nohup.out 文件中。</p>
+<p><a target="_blank" rel="noopener" href="https://101.lug.ustc.edu.cn/Ch04/#tmux">关于 tmux </a>。</p>
+<h3 id="服务"><a class="markdownIt-Anchor" href="#服务"></a> 服务</h3>
+<p>服务进程必须独立于用户的登录，不能随用户的退出而被终止。这类一直默默工作于后台的进程被称为守护进程 (daemon)。<br />
+目前绝大多数 Linux 发行版的 init 方案都是 systemd，其管理系统服务的命令是 systemctl。<br />
+<code>systemctl status [服务名]</code>: 查看服务状态。(服务名为可选参数，不填写则显示所有服务的状态)。<br />
+<code>systmectl list-units</code>: 列出所有服务。</p>
+<p>使用 journalctl 查看日志。</p>
+<h3 id="拓展阅读-4"><a class="markdownIt-Anchor" href="#拓展阅读-4"></a> 拓展阅读</h3>
+<p>暂无内容。</p>
+<h3 id="思考题解答-2"><a class="markdownIt-Anchor" href="#思考题解答-2"></a> 思考题解答</h3>
+<p>暂无内容。</p>
+<h2 id="五用户与用户组-文件权限-文件系统层次结构"><a class="markdownIt-Anchor" href="#五用户与用户组-文件权限-文件系统层次结构"></a> 五：用户与用户组、文件权限、文件系统层次结构</h2>
+<h3 id="用户与用户组"><a class="markdownIt-Anchor" href="#用户与用户组"></a> 用户与用户组</h3>
+<p>服务器环境中，用户的概念往往比较明确，目的是通过权限限制，以减小服务被攻击时对系统安全的破坏。对于个人用户来说，主要区分的是使用者的用户与系统用户，并且划分权限，以尽可能保证系统的完整性不会因为用户的误操作或恶意程序而遭到破坏。</p>
+<p>查看 /etc/passwd 文件，来得到系统中用户的配置信息。</p>
+<p>用户类型分为：root 用户（根用户）、普通用户、系统用户。</p>
+<p><strong>谨慎使用根用户（root）权限执行命令！</strong><br />
+Fork Bomb：一个简单的 shell 脚本，会不断地创建子进程，直到系统资源耗尽。可以通过限制用户的最大进程数来防范。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:()&#123; :|:&amp; &#125;;:</span><br></pre></td></tr></table></figure>
+<p>系统用户：系统用户是为了运行系统服务而创建的用户，通常不允许登录系统。在 Linux 中，系统用户的 UID 有一个指定范围，而这段范围在各个发行版中可能不同。<br />
+普通用户：普通用户可以登录系统，并对自己的家目录下的文件进行操作。普通用户无法直接修改系统配置，也无法为系统环境安装或卸载软件。</p>
+<h4 id="切换用户"><a class="markdownIt-Anchor" href="#切换用户"></a> 切换用户</h4>
+<p><code>sudo</code>: 不加入其他参数，sudo 后面直接加命令，将以 root 用户的身份执行该命令。加上 -u 用户名 的参数，可以切换到指定用户的身份执行命令。</p>
+<p>小技巧：在终端中输入 <code>sudo !!</code> 可以重复上一条命令，但是以 root 用户的身份执行。在 Shell 中，!! 即代表上一条命令，可以和其他的命令结合使用。</p>
+<p><code>su</code>: 切换用户，也就是说直接切换终端的用户权限，常用于需要执行多条 sudo 命令的时候。<code>su - 用户名</code> 可以切换到指定用户的身份，<code>su</code> 不加参数则默认切换到 root 用户。<br />
+但是，Ubuntu 等 Linux 发行版默认禁止了 root 用户的密码登录，只允许通过 sudo 提高权限，也就是说默认情况下，允许你用 root 权限执行命令（而无需切换到该用户的环境），但是不允许直接切换到 root 用户权限下。当然，仍然可以通过 sudo su 来获得一个为 root 用户权限的 shell。</p>
+<h4 id="用户组"><a class="markdownIt-Anchor" href="#用户组"></a> 用户组</h4>
+<p>用户组是用户的集合。通过用户组机制，可以为一批用户设置权限。比如 sudo 就是一个用户组。一个用户可以属于多个用户组。<br />
+可以使用 groups 命令，查看自己所属的用户组。<br />
+用户组和用户一样，也有编号：GID (Group ID)。</p>
+<h4 id="命令行的用户配置操作"><a class="markdownIt-Anchor" href="#命令行的用户配置操作"></a> 命令行的用户配置操作</h4>
+<p><code>passwd 用户名</code>: 修改密码。如果没有输入用户名，则修改自己的密码。<br />
+<code>adduser</code>: Debian 及其衍生发行版中附带的一个方便的用户管理脚本，可以用来向系统添加用户、添加组，以及将用户加入组。</p>
+<h3 id="文件权限"><a class="markdownIt-Anchor" href="#文件权限"></a> 文件权限</h3>
+<p>使用 ls -l 查看当前目录中文件的详细信息。</p>
+<blockquote>
+<table>
+<thead>
+<tr>
+<th>序号</th>
+<th>字段</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><code>-rw-r--r--</code></td>
+<td><strong>文件类型和权限</strong>（下方详细解释）</td>
+</tr>
+<tr>
+<td>2</td>
+<td><code>1</code></td>
+<td><strong>硬链接数</strong>（该文件/目录的引用数量）</td>
+</tr>
+<tr>
+<td>3</td>
+<td><code>user</code></td>
+<td><strong>所有者（Owner）</strong></td>
+</tr>
+<tr>
+<td>4</td>
+<td><code>group</code></td>
+<td><strong>用户组（Group）</strong></td>
+</tr>
+<tr>
+<td>5</td>
+<td><code>1234</code></td>
+<td><strong>文件大小（字节）</strong></td>
+</tr>
+<tr>
+<td>6</td>
+<td><code>Feb 8 10:30</code></td>
+<td><strong>最后修改时间</strong></td>
+</tr>
+<tr>
+<td>7</td>
+<td><code>example.txt</code></td>
+<td><strong>文件名</strong></td>
+</tr>
+</tbody>
+</table>
+<p>第一列的字符串从左到右意义分别是：</p>
+<ul>
+<li>文件类型（一位）：<code>d</code> 目录，<code>-</code> 文件。</li>
+<li>文件所属用户的权限（三位）。</li>
+<li>文件所属用户组的权限（三位）。</li>
+<li>其他人的权限（三位）。<br />
+对于每个权限，第一位 <code>r</code> 代表读取 (<strong>R</strong>ead)，第二位 <code>w</code> 代表写入 (<strong>W</strong>rite)，第三位 <code>x</code> 代表执行 (E<strong>x</strong>ecute)，<code>-</code> 代表没有对应的权限。</li>
+</ul>
+</blockquote>
+<p>对于一个文件来说，拥有执行权限，它就可以被操作系统作为程序代码执行。如果某个程序文件没有执行权限，你仍然可以查看这个程序文件本身，修改它的内容，但是无法执行它。<br />
+而对于目录来说，拥有执行权限，你就可以访问这个目录下的文件的内容。<br />
+为了更好地理解目录权限的含义，可以把目录视为一个「文件」来看待，这个文件包含了目录中下一层的文件列表——「读取」对应读取文件列表的权限，「写入」对应修改文件列表（添加、删除、重命名文件）的权限，「执行」对应实际去访问列表中文件、以及使用 cd 切换当前目录到此目录的权限。</p>
+<p><code>chmod</code>: 修改文件权限。<br />
+<code>chown</code>: 修改文件所有者。</p>
+<h3 id="文件系统层次结构"><a class="markdownIt-Anchor" href="#文件系统层次结构"></a> 文件系统层次结构</h3>
+<p>在 Windows 中，分区以盘符的形式来标识（如「C 盘」、「D 盘」），各个分区的分界线是很明确的。这种组织形式源于 DOS 和早期的 Windows，并一直传承下来。</p>
+<p>UNIX 系列采用了一种不一样的思路组织文件：整个系统的文件都从 /（根目录）开始，像一棵树一样，其他的分区以挂载 (mount) 的形式「挂」在了这棵树上。根目录下的目录，由文件系统层次结构标准 (FHS, Filesystem Hierarchy Standard) 定义其作用，大部分的 Linux 发行版遵循此标准，或由此标准做了细小的调整。可以使用 man hier 和 man file-hierarchy 查看你的系统中关于文件系统层次结构的文档。</p>
+<p><a target="_blank" rel="noopener" href="https://101.lug.ustc.edu.cn/Ch05/#fhs">常见根目录文件夹</a>。</p>
+<h3 id="拓展阅读-5"><a class="markdownIt-Anchor" href="#拓展阅读-5"></a> 拓展阅读</h3>
+<h3 id="思考题解答-3"><a class="markdownIt-Anchor" href="#思考题解答-3"></a> 思考题解答</h3>
+<h4 id="自定义服务"><a class="markdownIt-Anchor" href="#自定义服务"></a> 自定义服务</h4>
+<p>服务配置文件通常存放在 /etc/systemd/system/ 目录下，文件名以 .service 结尾。<br />
+<a target="_blank" rel="noopener" href="https://101.lug.ustc.edu.cn/Ch04/#customizing-service">自定义服务</a></p>
+<h4 id="例行性任务"><a class="markdownIt-Anchor" href="#例行性任务"></a> 例行性任务</h4>
+<p>基于时间的一次或多次周期性定时任务。主要由 at 和 crontab 来实现。</p>
+<h3 id="拓展阅读-6"><a class="markdownIt-Anchor" href="#拓展阅读-6"></a> 拓展阅读</h3>
+<p>暂无内容。</p>
+<h3 id="思考题解答-4"><a class="markdownIt-Anchor" href="#思考题解答-4"></a> 思考题解答</h3>
+<p>SIGKILL（kill -9）可以杀死所有进程吗？<br />
+init 不会被 SIGKILL 杀死。<br />
+状态为 D （Disk sleep）的进程不会被立刻杀死。状态为 Z （Zombie）的进程事实上已经不再执行了，因此不会再一次被退出，一般来说 init 进程能妥善的移除这类进程。</p>
+<h2 id="八docker"><a class="markdownIt-Anchor" href="#八docker"></a> 八：Docker</h2>
+<p>参见<a href="https://ti-fdgg.github.io/2025/02/07/Docker-Learning-Notes/">Docker学习笔记</a>。</p>
+<h3 id="思考题解答-5"><a class="markdownIt-Anchor" href="#思考题解答-5"></a> 思考题解答</h3>
 <h2 id="附录"><a class="markdownIt-Anchor" href="#附录"></a> 附录</h2>
 <h3 id="感想与吐槽"><a class="markdownIt-Anchor" href="#感想与吐槽"></a> 感想与吐槽</h3>
 <h4 id="2025年2月7日113757"><a class="markdownIt-Anchor" href="#2025年2月7日113757"></a> 2025年2月7日11:37:57</h4>
@@ -504,13 +681,13 @@ cmatrix：命令行界面模拟《黑客帝国》特效显示。</p>
       
         <div class="share-wrapper">
   
-    <a href="http://connect.qq.com/widget/shareqq/index.html?url=https%3A%2F%2Fti-fdgg.github.io%2F2025%2F02%2F05%2FLinux-Learning-Notes%2F&amp;title=Linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0&amp;desc=Linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0&amp;source=https%3A%2F%2Fti-fdgg.github.io" target="_blank" rel="noopener noreferrer" title="Linux学习笔记">
+    <a href="http://connect.qq.com/widget/shareqq/index.html?url=https%3A%2F%2Fti-fdgg.github.io%2F2025%2F02%2F05%2FLinux-Learning-Notes%2F&amp;title=Linux%20%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0&amp;desc=Linux%20%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0&amp;source=https%3A%2F%2Fti-fdgg.github.io" target="_blank" rel="noopener noreferrer" title="Linux 学习笔记">
       <div class="share-icon icon icon-qq">
         
       </div>
     </a>
   
-    <a href="javascript:;"  title="Linux学习笔记">
+    <a href="javascript:;"  title="Linux 学习笔记">
       <div class="share-icon icon icon-weixin">
         
           <div id="share-weixin">
@@ -554,14 +731,14 @@ cmatrix：命令行界面模拟《黑客帝国》特效显示。</p>
         
           
           
-            <img data-src="/covers/燐空.jpg" data-sizes="auto" alt="Vim学习笔记" class="lazyload">
+            <img data-src="/covers/kawa.jpg" data-sizes="auto" alt="Vim 学习笔记" class="lazyload">
           
         
         <a href="/2025/02/07/Vim-Learning-Notes/"></a>
         <div class="article-nav-caption">前一篇</div>
         <h3 class="article-nav-title">
           
-            Vim学习笔记
+            Vim 学习笔记
           
         </h3>
       </div>
@@ -571,7 +748,7 @@ cmatrix：命令行界面模拟《黑客帝国》特效显示。</p>
       
         
         
-          <img data-src="/covers/燐空.jpg" data-sizes="auto" alt="hexo deploy（hexo d）部署文件到GitHub时，报错：“Error:Spawn failed”" class="lazyload">
+          <img data-src="/covers/秋天的猫.jpg" data-sizes="auto" alt="hexo deploy（hexo d）部署文件到GitHub时，报错：“Error:Spawn failed”" class="lazyload">
         
       
       <a href="/2025/02/04/SpawnFailed/"></a>
@@ -620,10 +797,10 @@ cmatrix：命令行界面模拟《黑客帝国》特效显示。</p>
     
       <div>
         <span class="icon-brush"></span>
-        6.8k
+        10.6k
         &nbsp;|&nbsp;
         <span class="icon-coffee"></span>
-        00:28
+        00:41
       </div>
     
     
@@ -655,7 +832,7 @@ cmatrix：命令行界面模拟《黑客帝国》特效显示。</p>
   <h3 class="toc-title">文章目录</h3>
   <div class="sidebar-toc-wrapper toc-div-class" >
       
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%B4%9F%E4%B8%80%E8%AE%B0%E7%AC%94%E8%AE%B0"><span class="toc-number">1.</span> <span class="toc-text"> 负一：记笔记</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E8%AE%B0%E7%AC%94%E8%AE%B0%E5%BE%85%E6%95%B4%E7%90%86%E4%BF%AE%E6%94%B9"><span class="toc-number">1.1.</span> <span class="toc-text"> 为什么要记笔记？（待整理修改）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%88%91%E4%BC%9A%E6%80%8E%E6%A0%B7%E5%8E%BB%E8%AE%B0%E7%AC%94%E8%AE%B0%E5%BE%85%E6%95%B4%E7%90%86%E4%BF%AE%E6%94%B9"><span class="toc-number">1.2.</span> <span class="toc-text"> 我会怎样去记笔记？（待整理修改）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9B%B6%E6%AC%A2%E8%BF%8E"><span class="toc-number">2.</span> <span class="toc-text"> 零：欢迎</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E5%88%9D%E8%AF%86linux"><span class="toc-number">3.</span> <span class="toc-text"> 一：初识Linux</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%8E%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F"><span class="toc-number">3.1.</span> <span class="toc-text"> 计算机与操作系统</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFlinux"><span class="toc-number">3.2.</span> <span class="toc-text"> 什么是Linux？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%88%91%E4%BB%AC%E8%BA%AB%E8%BE%B9%E7%9A%84-linux"><span class="toc-number">3.3.</span> <span class="toc-text"> 我们身边的 Linux</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%A9%E8%87%AA%E5%B7%B1%E7%9A%84%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%94%A8%E4%B8%8A-linux"><span class="toc-number">3.4.</span> <span class="toc-text"> 让自己的计算机用上 Linux</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%9D%E8%80%83%E9%A2%98"><span class="toc-number">3.5.</span> <span class="toc-text"> 思考题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8B%93%E5%B1%95%E9%98%85%E8%AF%BB"><span class="toc-number">3.6.</span> <span class="toc-text"> 拓展阅读</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E4%B8%AA%E6%80%A7%E5%8C%96%E9%85%8D%E7%BD%AE%E4%B8%8E%E5%BB%BA%E7%AB%99%E4%BD%93%E9%AA%8C"><span class="toc-number">4.</span> <span class="toc-text"> 二：个性化配置与建站体验</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A1%8C%E9%9D%A2%E7%8E%AF%E5%A2%83"><span class="toc-number">4.1.</span> <span class="toc-text"> 桌面环境</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%91%BD%E4%BB%A4%E8%A1%8C%E6%93%8D%E4%BD%9C"><span class="toc-number">4.2.</span> <span class="toc-text"> 命令行操作</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E7%94%A8%E5%91%BD%E4%BB%A4%E8%A1%8C"><span class="toc-number">4.2.1.</span> <span class="toc-text"> 为什么要用命令行</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#shell"><span class="toc-number">4.2.2.</span> <span class="toc-text"> shell</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%90%AD%E5%BB%BA%E7%AE%80%E6%98%93%E7%9A%84%E7%BD%91%E7%AB%99"><span class="toc-number">4.3.</span> <span class="toc-text"> 搭建简易的网站</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%9D%E8%80%83%E9%A2%98-2"><span class="toc-number">4.4.</span> <span class="toc-text"> 思考题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8B%93%E5%B1%95%E9%98%85%E8%AF%BB-2"><span class="toc-number">4.5.</span> <span class="toc-text"> 拓展阅读</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85%E4%B8%8E%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C"><span class="toc-number">5.</span> <span class="toc-text"> 三：软件安装与文件操作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85"><span class="toc-number">5.1.</span> <span class="toc-text"> 软件安装</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BA%94%E7%94%A8%E5%95%86%E5%BA%97"><span class="toc-number">5.1.1.</span> <span class="toc-text"> 应用商店</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8C%85%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F%E8%BD%AF%E4%BB%B6%E5%8C%85%E7%AE%A1%E7%90%86%E5%99%A8"><span class="toc-number">5.1.2.</span> <span class="toc-text"> 包管理系统&#x2F;软件包管理器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%98%E6%96%B9%E8%BD%AF%E4%BB%B6%E6%BA%90%E4%B8%8E%E7%AC%AC%E4%B8%89%E6%96%B9%E8%BD%AF%E4%BB%B6%E6%BA%90"><span class="toc-number">5.1.3.</span> <span class="toc-text"> 官方软件源与第三方软件源</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9B%B4%E6%96%B0%E8%BD%AF%E4%BB%B6%E5%88%97%E8%A1%A8%E4%B8%8E%E6%9B%B4%E6%96%B0%E8%BD%AF%E4%BB%B6"><span class="toc-number">5.1.4.</span> <span class="toc-text"> 更新软件列表与更新软件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%89%8B%E5%8A%A8%E5%AE%89%E8%A3%85"><span class="toc-number">5.1.5.</span> <span class="toc-text"> 手动安装</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E9%A2%84%E7%BC%96%E8%AF%91%E5%8F%AF%E6%89%A7%E8%A1%8C%E6%96%87%E4%BB%B6"><span class="toc-number">5.1.6.</span> <span class="toc-text"> 安装预编译可执行文件</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%93%8D%E4%BD%9C%E6%96%87%E4%BB%B6%E4%B8%8E%E7%9B%AE%E5%BD%95"><span class="toc-number">5.2.</span> <span class="toc-text"> 操作文件与目录</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8-tar-%E6%93%8D%E4%BD%9C%E5%AD%98%E6%A1%A3-%E5%8E%8B%E7%BC%A9%E6%96%87%E4%BB%B6"><span class="toc-number">5.3.</span> <span class="toc-text"> 使用 tar 操作存档、压缩文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BD%AF%E4%BB%B6%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%87%E6%A1%A3"><span class="toc-number">5.4.</span> <span class="toc-text"> 软件的使用文档</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8B%93%E5%B1%95%E9%98%85%E8%AF%BB-3"><span class="toc-number">5.5.</span> <span class="toc-text"> 拓展阅读</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#vim"><span class="toc-number">5.5.1.</span> <span class="toc-text"> Vim</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%ABdocker"><span class="toc-number">6.</span> <span class="toc-text"> 八：Docker</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%9D%E8%80%83%E9%A2%98%E8%A7%A3%E7%AD%94"><span class="toc-number">6.1.</span> <span class="toc-text"> 思考题解答</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%99%84%E5%BD%95"><span class="toc-number">7.</span> <span class="toc-text"> 附录</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%84%9F%E6%83%B3%E4%B8%8E%E5%90%90%E6%A7%BD"><span class="toc-number">7.1.</span> <span class="toc-text"> 感想与吐槽</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2025%E5%B9%B42%E6%9C%887%E6%97%A5113757"><span class="toc-number">7.1.1.</span> <span class="toc-text"> 2025年2月7日11:37:57</span></a></li></ol></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%B4%9F%E4%B8%80%E8%AE%B0%E7%AC%94%E8%AE%B0"><span class="toc-number">1.</span> <span class="toc-text"> 负一：记笔记</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E8%AE%B0%E7%AC%94%E8%AE%B0%E5%BE%85%E6%95%B4%E7%90%86%E4%BF%AE%E6%94%B9"><span class="toc-number">1.1.</span> <span class="toc-text"> 为什么要记笔记？（待整理修改）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%88%91%E4%BC%9A%E6%80%8E%E6%A0%B7%E5%8E%BB%E8%AE%B0%E7%AC%94%E8%AE%B0%E5%BE%85%E6%95%B4%E7%90%86%E4%BF%AE%E6%94%B9"><span class="toc-number">1.2.</span> <span class="toc-text"> 我会怎样去记笔记？（待整理修改）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9B%B6%E6%AC%A2%E8%BF%8E"><span class="toc-number">2.</span> <span class="toc-text"> 零：欢迎</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E5%88%9D%E8%AF%86linux"><span class="toc-number">3.</span> <span class="toc-text"> 一：初识Linux</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%8E%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F"><span class="toc-number">3.1.</span> <span class="toc-text"> 计算机与操作系统</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFlinux"><span class="toc-number">3.2.</span> <span class="toc-text"> 什么是Linux？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%88%91%E4%BB%AC%E8%BA%AB%E8%BE%B9%E7%9A%84-linux"><span class="toc-number">3.3.</span> <span class="toc-text"> 我们身边的 Linux</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%A9%E8%87%AA%E5%B7%B1%E7%9A%84%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%94%A8%E4%B8%8A-linux"><span class="toc-number">3.4.</span> <span class="toc-text"> 让自己的计算机用上 Linux</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%9D%E8%80%83%E9%A2%98"><span class="toc-number">3.5.</span> <span class="toc-text"> 思考题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8B%93%E5%B1%95%E9%98%85%E8%AF%BB"><span class="toc-number">3.6.</span> <span class="toc-text"> 拓展阅读</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E4%B8%AA%E6%80%A7%E5%8C%96%E9%85%8D%E7%BD%AE%E4%B8%8E%E5%BB%BA%E7%AB%99%E4%BD%93%E9%AA%8C"><span class="toc-number">4.</span> <span class="toc-text"> 二：个性化配置与建站体验</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A1%8C%E9%9D%A2%E7%8E%AF%E5%A2%83"><span class="toc-number">4.1.</span> <span class="toc-text"> 桌面环境</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%91%BD%E4%BB%A4%E8%A1%8C%E6%93%8D%E4%BD%9C"><span class="toc-number">4.2.</span> <span class="toc-text"> 命令行操作</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E7%94%A8%E5%91%BD%E4%BB%A4%E8%A1%8C"><span class="toc-number">4.2.1.</span> <span class="toc-text"> 为什么要用命令行</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#shell"><span class="toc-number">4.2.2.</span> <span class="toc-text"> shell</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%90%AD%E5%BB%BA%E7%AE%80%E6%98%93%E7%9A%84%E7%BD%91%E7%AB%99"><span class="toc-number">4.3.</span> <span class="toc-text"> 搭建简易的网站</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%9D%E8%80%83%E9%A2%98-2"><span class="toc-number">4.4.</span> <span class="toc-text"> 思考题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8B%93%E5%B1%95%E9%98%85%E8%AF%BB-2"><span class="toc-number">4.5.</span> <span class="toc-text"> 拓展阅读</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85%E4%B8%8E%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C"><span class="toc-number">5.</span> <span class="toc-text"> 三：软件安装与文件操作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85"><span class="toc-number">5.1.</span> <span class="toc-text"> 软件安装</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BA%94%E7%94%A8%E5%95%86%E5%BA%97"><span class="toc-number">5.1.1.</span> <span class="toc-text"> 应用商店</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8C%85%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F%E8%BD%AF%E4%BB%B6%E5%8C%85%E7%AE%A1%E7%90%86%E5%99%A8"><span class="toc-number">5.1.2.</span> <span class="toc-text"> 包管理系统&#x2F;软件包管理器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%98%E6%96%B9%E8%BD%AF%E4%BB%B6%E6%BA%90%E4%B8%8E%E7%AC%AC%E4%B8%89%E6%96%B9%E8%BD%AF%E4%BB%B6%E6%BA%90"><span class="toc-number">5.1.3.</span> <span class="toc-text"> 官方软件源与第三方软件源</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9B%B4%E6%96%B0%E8%BD%AF%E4%BB%B6%E5%88%97%E8%A1%A8%E4%B8%8E%E6%9B%B4%E6%96%B0%E8%BD%AF%E4%BB%B6"><span class="toc-number">5.1.4.</span> <span class="toc-text"> 更新软件列表与更新软件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%89%8B%E5%8A%A8%E5%AE%89%E8%A3%85"><span class="toc-number">5.1.5.</span> <span class="toc-text"> 手动安装</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E9%A2%84%E7%BC%96%E8%AF%91%E5%8F%AF%E6%89%A7%E8%A1%8C%E6%96%87%E4%BB%B6"><span class="toc-number">5.1.6.</span> <span class="toc-text"> 安装预编译可执行文件</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%93%8D%E4%BD%9C%E6%96%87%E4%BB%B6%E4%B8%8E%E7%9B%AE%E5%BD%95"><span class="toc-number">5.2.</span> <span class="toc-text"> 操作文件与目录</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8-tar-%E6%93%8D%E4%BD%9C%E5%AD%98%E6%A1%A3-%E5%8E%8B%E7%BC%A9%E6%96%87%E4%BB%B6"><span class="toc-number">5.3.</span> <span class="toc-text"> 使用 tar 操作存档、压缩文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BD%AF%E4%BB%B6%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%87%E6%A1%A3"><span class="toc-number">5.4.</span> <span class="toc-text"> 软件的使用文档</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8B%93%E5%B1%95%E9%98%85%E8%AF%BB-3"><span class="toc-number">5.5.</span> <span class="toc-text"> 拓展阅读</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#vim"><span class="toc-number">5.5.1.</span> <span class="toc-text"> Vim</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E7%9A%84%E6%97%B6%E9%97%B4%E6%88%B3"><span class="toc-number">5.5.2.</span> <span class="toc-text"> 文件的时间戳</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%9D%E8%80%83%E9%A2%98%E8%A7%A3%E7%AD%94"><span class="toc-number">5.6.</span> <span class="toc-text"> 思考题解答</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88-mv-%E5%91%BD%E4%BB%A4%E4%B8%8D%E9%9C%80%E8%A6%81-r-recursive-%E5%8F%82%E6%95%B0"><span class="toc-number">5.6.1.</span> <span class="toc-text"> 为什么 mv 命令不需要 -r (recursive) 参数</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9B%E8%BF%9B%E7%A8%8B-%E5%89%8D%E5%90%8E%E5%8F%B0-%E6%9C%8D%E5%8A%A1%E4%B8%8E%E4%BE%8B%E8%A1%8C%E6%80%A7%E4%BB%BB%E5%8A%A1"><span class="toc-number">6.</span> <span class="toc-text"> 四：进程、前后台、服务与例行性任务</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%9B%E7%A8%8B"><span class="toc-number">6.1.</span> <span class="toc-text"> 进程</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BF%9B%E7%A8%8B%E4%BC%98%E5%85%88%E7%BA%A7%E4%B8%8E%E7%8A%B6%E6%80%81"><span class="toc-number">6.1.1.</span> <span class="toc-text"> 进程优先级与状态</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%A8%E6%88%B7%E8%BF%9B%E7%A8%8B%E6%8E%A7%E5%88%B6"><span class="toc-number">6.2.</span> <span class="toc-text"> 用户进程控制</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#kill-%E5%91%BD%E4%BB%A4"><span class="toc-number">6.2.1.</span> <span class="toc-text"> kill 命令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%84%B1%E7%A6%BB%E7%BB%88%E7%AB%AF"><span class="toc-number">6.2.2.</span> <span class="toc-text"> 脱离终端</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%8D%E5%8A%A1"><span class="toc-number">6.3.</span> <span class="toc-text"> 服务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8B%93%E5%B1%95%E9%98%85%E8%AF%BB-4"><span class="toc-number">6.4.</span> <span class="toc-text"> 拓展阅读</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%9D%E8%80%83%E9%A2%98%E8%A7%A3%E7%AD%94-2"><span class="toc-number">6.5.</span> <span class="toc-text"> 思考题解答</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%94%E7%94%A8%E6%88%B7%E4%B8%8E%E7%94%A8%E6%88%B7%E7%BB%84-%E6%96%87%E4%BB%B6%E6%9D%83%E9%99%90-%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E5%B1%82%E6%AC%A1%E7%BB%93%E6%9E%84"><span class="toc-number">7.</span> <span class="toc-text"> 五：用户与用户组、文件权限、文件系统层次结构</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%A8%E6%88%B7%E4%B8%8E%E7%94%A8%E6%88%B7%E7%BB%84"><span class="toc-number">7.1.</span> <span class="toc-text"> 用户与用户组</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%87%E6%8D%A2%E7%94%A8%E6%88%B7"><span class="toc-number">7.1.1.</span> <span class="toc-text"> 切换用户</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%94%A8%E6%88%B7%E7%BB%84"><span class="toc-number">7.1.2.</span> <span class="toc-text"> 用户组</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%91%BD%E4%BB%A4%E8%A1%8C%E7%9A%84%E7%94%A8%E6%88%B7%E9%85%8D%E7%BD%AE%E6%93%8D%E4%BD%9C"><span class="toc-number">7.1.3.</span> <span class="toc-text"> 命令行的用户配置操作</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E6%9D%83%E9%99%90"><span class="toc-number">7.2.</span> <span class="toc-text"> 文件权限</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E5%B1%82%E6%AC%A1%E7%BB%93%E6%9E%84"><span class="toc-number">7.3.</span> <span class="toc-text"> 文件系统层次结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8B%93%E5%B1%95%E9%98%85%E8%AF%BB-5"><span class="toc-number">7.4.</span> <span class="toc-text"> 拓展阅读</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%9D%E8%80%83%E9%A2%98%E8%A7%A3%E7%AD%94-3"><span class="toc-number">7.5.</span> <span class="toc-text"> 思考题解答</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E6%9C%8D%E5%8A%A1"><span class="toc-number">7.5.1.</span> <span class="toc-text"> 自定义服务</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BE%8B%E8%A1%8C%E6%80%A7%E4%BB%BB%E5%8A%A1"><span class="toc-number">7.5.2.</span> <span class="toc-text"> 例行性任务</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8B%93%E5%B1%95%E9%98%85%E8%AF%BB-6"><span class="toc-number">7.6.</span> <span class="toc-text"> 拓展阅读</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%9D%E8%80%83%E9%A2%98%E8%A7%A3%E7%AD%94-4"><span class="toc-number">7.7.</span> <span class="toc-text"> 思考题解答</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%ABdocker"><span class="toc-number">8.</span> <span class="toc-text"> 八：Docker</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%9D%E8%80%83%E9%A2%98%E8%A7%A3%E7%AD%94-5"><span class="toc-number">8.1.</span> <span class="toc-text"> 思考题解答</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%99%84%E5%BD%95"><span class="toc-number">9.</span> <span class="toc-text"> 附录</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%84%9F%E6%83%B3%E4%B8%8E%E5%90%90%E6%A7%BD"><span class="toc-number">9.1.</span> <span class="toc-text"> 感想与吐槽</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2025%E5%B9%B42%E6%9C%887%E6%97%A5113757"><span class="toc-number">9.1.1.</span> <span class="toc-text"> 2025年2月7日11:37:57</span></a></li></ol></li></ol></li></ol>
       
   </div>
 </div>
@@ -668,15 +845,15 @@ cmatrix：命令行界面模拟《黑客帝国》特效显示。</p>
 <div class="sidebar-state">
   <div class="sidebar-state-article">
     <div>文章</div>
-    <div class="sidebar-state-number">8</div>
+    <div class="sidebar-state-number">9</div>
   </div>
   <div class="sidebar-state-category">
     <div>分类</div>
-    <div class="sidebar-state-number">7</div>
+    <div class="sidebar-state-number">9</div>
   </div>
   <div class="sidebar-state-tag">
     <div>标签</div>
-    <div class="sidebar-state-number">13</div>
+    <div class="sidebar-state-number">14</div>
   </div>
 </div>
 <div class="sidebar-social">
@@ -930,13 +1107,13 @@ cmatrix：命令行界面模拟《黑客帝国》特效显示。</p>
       <script data-pjax>
         window.REIMU_POST = {
           author: "Mothy Ti",
-          title: "Linux学习笔记",
+          title: "Linux 学习笔记",
           url: "https://ti-fdgg.github.io/2025/02/05/Linux-Learning-Notes/",
           excerpt: "",
           description: "",
           stripContent: "主要通过Linux101来学习Linux的基础知识，以及一些常用的命令。感谢这篇文档的编辑者的辛勤付出。 本笔记结构计划仿照Linux101的组织结构，从零到附录每一章节的学习记录一章节的笔记。另外，也在文章开头设置负一章节，用于发表我对于记笔记这件事情的看法。  负一：记笔记  为什么要记笔记？（待整理修改） 更新：我之前有一个毛病就是看一篇文档看到底部，有时候就会思考自己看了什么，然后就又向上翻自己记住了什么。或者是长时间看一系列的文档，经常会在开始新的一段看文档的过程中翻看上一段时间看过的",
           date: "Wed Feb 05 2025 13:41:58 GMT+0800",
-          updated: "Fri Feb 07 2025 15:51:42 GMT+0800",
+          updated: "Sat Feb 08 2025 12:45:44 GMT+0800",
           cover: "/images/banner/new_ban.webp",
         };
       </script>
