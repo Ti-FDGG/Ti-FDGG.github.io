@@ -27,16 +27,16 @@
 
   
   
-    <meta name="description" content="上级文档 如图：  主要报错信息如下： 123456FATAL Something&#x27;s wrong. Maybe you can find the solution here: https:&#x2F;&#x2F;hexo.io&#x2F;docs&#x2F;troubleshooting.htmlError: Spawn failed    at ChildProcess.&lt;anonymous&gt; (E:\blog">
+    <meta name="description" content="上级文档  报错信息 如图：  主要报错信息如下： 123456FATAL Something&#x27;s wrong. Maybe you can find the solution here: https:&#x2F;&#x2F;hexo.io&#x2F;docs&#x2F;troubleshooting.htmlError: Spawn failed    at ChildProcess.&lt;anonymous&gt; (E">
 <meta property="og:type" content="article">
 <meta property="og:title" content="hexo deploy（hexo d）部署文件到GitHub时，报错：“Error:Spawn failed”">
 <meta property="og:url" content="https://ti-fdgg.github.io/2025/02/04/SpawnFailed/index.html">
 <meta property="og:site_name" content="Timothy&#39;s Blog">
-<meta property="og:description" content="上级文档 如图：  主要报错信息如下： 123456FATAL Something&#x27;s wrong. Maybe you can find the solution here: https:&#x2F;&#x2F;hexo.io&#x2F;docs&#x2F;troubleshooting.htmlError: Spawn failed    at ChildProcess.&lt;anonymous&gt; (E:\blog">
+<meta property="og:description" content="上级文档  报错信息 如图：  主要报错信息如下： 123456FATAL Something&#x27;s wrong. Maybe you can find the solution here: https:&#x2F;&#x2F;hexo.io&#x2F;docs&#x2F;troubleshooting.htmlError: Spawn failed    at ChildProcess.&lt;anonymous&gt; (E">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://ti-fdgg.github.io/2025/02/04/SpawnFailed/Spawnfailed%E6%8A%A5%E9%94%99%E4%BF%A1%E6%81%AF.png">
 <meta property="article:published_time" content="2025-02-04T05:53:50.000Z">
-<meta property="article:modified_time" content="2025-02-09T01:49:11.191Z">
+<meta property="article:modified_time" content="2025-02-10T16:56:37.564Z">
 <meta property="article:author" content="Mothy Ti">
 <meta property="article:tag" content="Hexo">
 <meta property="article:tag" content="博客&#x2F;Blog">
@@ -225,7 +225,7 @@
   <h3 class="toc-title">文章目录</h3>
   <div class="sidebar-toc-wrapper toc-div-class" >
       
-        
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8A%A5%E9%94%99%E4%BF%A1%E6%81%AF"><span class="toc-number">1.</span> <span class="toc-text"> 报错信息</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88"><span class="toc-number">2.</span> <span class="toc-text"> 解决方案</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E5%86%85%E5%AE%B9"><span class="toc-number">2.0.0.1.</span> <span class="toc-text"> 参考内容</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B9%E6%A1%88%E4%B8%80%E6%9B%B4%E6%8D%A2%E6%9B%B4%E5%8A%A0%E7%A8%B3%E5%AE%9A%E7%9A%84%E7%BD%91%E7%BB%9C%E7%8E%AF%E5%A2%83%E5%A6%82%E4%BD%BF%E7%94%A8%E6%89%8B%E6%9C%BA%E7%A7%BB%E5%8A%A8%E7%83%AD%E7%82%B9"><span class="toc-number">2.1.</span> <span class="toc-text"> 方案一：更换更加稳定的网络环境（如使用手机移动热点）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B9%E6%A1%88%E4%BA%8C%E4%BF%AE%E6%94%B9%E6%88%96%E5%88%A0%E9%99%A4-deplot_git-%E6%96%87%E4%BB%B6%E5%A4%B9"><span class="toc-number">2.2.</span> <span class="toc-text"> 方案二：修改或删除 .deplot_git 文件夹</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B9%E6%A1%88%E4%B8%89%E9%87%8D%E8%A3%85-hexo-deployer-git"><span class="toc-number">2.3.</span> <span class="toc-text"> 方案三：重装 hexo-deployer-git</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B9%E6%A1%88%E5%9B%9B%E4%BD%BF%E7%94%A8-ssh-%E5%9C%B0%E5%9D%80"><span class="toc-number">2.4.</span> <span class="toc-text"> 方案四：使用 SSH 地址</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B9%E6%A1%88%E4%BA%94%E6%A3%80%E6%9F%A5github%E8%AE%BF%E9%97%AE%E6%9D%83%E9%99%90"><span class="toc-number">2.5.</span> <span class="toc-text"> 方案五：检查github访问权限</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B9%E6%A1%88%E5%85%AD%E6%A3%80%E6%9F%A5%E4%BB%A3%E7%90%86%E8%AE%BE%E7%BD%AE"><span class="toc-number">2.6.</span> <span class="toc-text"> 方案六：检查代理设置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%8E%E8%AE%B0"><span class="toc-number">2.7.</span> <span class="toc-text"> 后记</span></a></li></ol></li></ol>
       
   </div>
 </div>
@@ -319,7 +319,7 @@
       <div class="article-date">
   <a href="/2025/02/04/SpawnFailed/" class="article-date-link" data-aos="zoom-in">
     <time datetime="2025-02-04T05:53:50.000Z" itemprop="datePublished">2025-02-04</time>
-    <time style="display: none;" id="post-update-time">2025-02-09</time>
+    <time style="display: none;" id="post-update-time">2025-02-11</time>
   </a>
 </div>
 
@@ -337,10 +337,60 @@
       
       
         <p><a href="https://ti-fdgg.github.io/2024/08/18/questions-and-solutions-while-bulid-blog/">上级文档</a></p>
+<h2 id="报错信息"><a class="markdownIt-Anchor" href="#报错信息"></a> 报错信息</h2>
 <p>如图：</p>
 <p><img src="Spawnfailed%E6%8A%A5%E9%94%99%E4%BF%A1%E6%81%AF.png" alt="Spawnfailed报错信息" /></p>
 <p>主要报错信息如下：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">FATAL Something&#x27;s wrong. Maybe you can find the solution here: https://hexo.io/docs/troubleshooting.html</span><br><span class="line">Error: Spawn failed</span><br><span class="line">    at ChildProcess.&lt;anonymous&gt; (E:\blogs\myblog\node_modules\hexo-deployer-git\node_modules\hexo-util\lib\spawn.js:51:21)</span><br><span class="line">    at ChildProcess.emit (node:events:519:28)</span><br><span class="line">    at cp.emit (E:\blogs\myblog\node_modules\cross-spawn\lib\enoent.js:34:29)</span><br><span class="line">    at ChildProcess._handle.onexit (node:internal/child_process:294:12)</span><br></pre></td></tr></table></figure>
+<h2 id="解决方案"><a class="markdownIt-Anchor" href="#解决方案"></a> 解决方案</h2>
+<h5 id="参考内容"><a class="markdownIt-Anchor" href="#参考内容"></a> 参考内容</h5>
+<p>这一部分主要参考以下博客内容编写：</p>
+<ol>
+<li><a target="_blank" rel="noopener" href="https://blog.zhheo.com/p/128998ac.html">Hexo错误：spawn failed的解决方法</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/2303_79611263/article/details/140346864">[最全]解决将Hexo部署到GitHub时报错：Error: Spawn failed</a></li>
+<li><a target="_blank" rel="noopener" href="https://plctey.github.io/2025/01/24/%E8%A7%A3%E5%86%B3%20Spawn%20failed%20%E9%97%AE%E9%A2%98%E7%9A%84%E4%B8%89%E7%A7%8D%E6%96%B9%E6%B3%95/">解决 Spawn failed 问题的三种方法</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/HTL2018/article/details/106876940">hexo发生error：spawn failed错误的解决方法</a></li>
+</ol>
+<h3 id="方案一更换更加稳定的网络环境如使用手机移动热点"><a class="markdownIt-Anchor" href="#方案一更换更加稳定的网络环境如使用手机移动热点"></a> 方案一：更换更加稳定的网络环境（如使用手机移动热点）</h3>
+<p><strong>这个方案解决了我的问题。</strong></p>
+<p>心路历程：<br />
+在查阅了网上各种资料之后我的问题迟迟得不到有效解决，网上主流的解决方案都是删除<code>.deploy_git</code>文件夹或者修改其中的文件内容。但是这样做了之后依然会<strong>间歇性</strong>的出现以上问题。在询问ChatGPT以及结合网上的方法之后，我决定尝试直接对 GitHub 网站进行SSH连接。之后果然没有得到正常的回复信息，但也并没有得到像<a href="#%E6%96%B9%E6%A1%88%E4%BA%94%E6%A3%80%E6%9F%A5github%E8%AE%BF%E9%97%AE%E6%9D%83%E9%99%90">方案五</a>说的一样的结果，而是显示已经自动被重置到443端口。<br />
+结合此前观察到的问题“间歇性”发作，以及使用家里的 WiFi 连接经常性的不能稳定的登录外网，（以及我在用家里的网打游戏的时候总是莫名其妙卡顿的经历），我突然意识到是网络环境不稳定的问题。之后我就连接了移动热点，果然解决了这个问题。<br />
+此前在网上一直没有找到与我有类似情况的人，不过反倒在发布这个帖子快一周后的今天（2025年2月10日）（为什么现在才更。。），我又重新搜索这个问题的时候，找到了<a target="_blank" rel="noopener" href="https://www.cnblogs.com/limyu/p/17897437.html">与我有类似情况的人</a>（以及<a target="_blank" rel="noopener" href="https://plctey.github.io/2025/01/24/%E8%A7%A3%E5%86%B3%20Spawn%20failed%20%E9%97%AE%E9%A2%98%E7%9A%84%E4%B8%89%E7%A7%8D%E6%96%B9%E6%B3%95/">另一个与我有类似情况的人</a>）。只可惜当初没有找到这个博客，似乎AI也没有为我整理这一信息，导致花费了很多时间去踩坑。</p>
+<h3 id="方案二修改或删除-deplot_git-文件夹"><a class="markdownIt-Anchor" href="#方案二修改或删除-deplot_git-文件夹"></a> 方案二：修改或删除 .deplot_git 文件夹</h3>
+<p>问题大多是因为 git 进行push或者hexo d的时候改变了一些.deploy_git文件下的内容<a href="#%E5%8F%82%E8%80%83%E5%86%85%E5%AE%B9">参考内容第4条</a>，因此修改其中内容，或者直接删除这一文件夹即可（这个文件夹在每一次 hexo d 的时候都会更新，不存在会自动创建，删除不会影响博客的正常工作）。</p>
+<p>最直接的方法：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">rm -rf .deploy_git/ # 或手动删除根目录下的 .deploy_git 文件夹</span><br><span class="line">git config --global core.autocrlf false # 禁用 Git 自动转换换行符，保持文件原始的换行符格式。具体这一行有什么用我也不清楚</span><br></pre></td></tr></table></figure>
+<p>之后执行</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</span><br></pre></td></tr></table></figure>
+<p>观察能否正常运行。</p>
+<p>在<a href="#%E5%8F%82%E8%80%83%E5%86%85%E5%AE%B9">参考内容第1条</a>中还给出了以下方法：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd .deploy_git</span><br><span class="line">git config –global core.autocrlf false。</span><br></pre></td></tr></table></figure>
+<p>或<br />
+找到.deploy_git文件夹中的index.lock文件，删除。</p>
+<p>不过我没有测试（实际上也没有条件测试，因为我的问题不是通过这个方法解决的），不保证有效性。<br />
+实际上方案二是网上最常见的解决方案，而且都是通过删除文件夹并进一步配置实现的。</p>
+<h3 id="方案三重装-hexo-deployer-git"><a class="markdownIt-Anchor" href="#方案三重装-hexo-deployer-git"></a> 方案三：重装 hexo-deployer-git</h3>
+<p>感觉与方案二类似。<br />
+这是我最初使用的方法，但是后来也发现是间歇性起效，实际上也不是解决我的问题的根源。<br />
+当然了，可以一试。</p>
+<h3 id="方案四使用-ssh-地址"><a class="markdownIt-Anchor" href="#方案四使用-ssh-地址"></a> 方案四：使用 SSH 地址</h3>
+<p>参见<a href="#%E5%8F%82%E8%80%83%E5%86%85%E5%AE%B9">参考内容第2或第3条</a>，写的都比较简洁明了。</p>
+<h3 id="方案五检查github访问权限"><a class="markdownIt-Anchor" href="#方案五检查github访问权限"></a> 方案五：检查github访问权限</h3>
+<p>参见<a href="#%E5%8F%82%E8%80%83%E5%86%85%E5%AE%B9">参考内容第2条</a>。这一解决方案虽然没有直接解决我的问题，但也是对我想出方案一有一点启发吧。。</p>
+<h3 id="方案六检查代理设置"><a class="markdownIt-Anchor" href="#方案六检查代理设置"></a> 方案六：检查代理设置</h3>
+<p>这也算是各种网络问题的经典解决方案了，就好比我玩<code>坦克世界</code>的时候如果开着代理就没法正常登录游戏（为什么其他游戏可以比如战雷）。</p>
+<p>首先可以尝试打开或关闭你的软件（梯子）上的代理设置（当然，也可以直接重启计算机）。尝试问题是否解决。</p>
+<p>没有解决的话，参见<a href="#%E5%8F%82%E8%80%83%E5%86%85%E5%AE%B9">参考内容第1条</a><br />
+在开启代理设置的情况下，检查是否正确设置git代理命令：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global http.proxy http://127.0.0.1:1080</span><br><span class="line">git config --global https.proxy https://127.0.0.1:1080</span><br></pre></td></tr></table></figure>
+<p>在关闭代理设置的情况下，可以取消git代理：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global --unset http.proxy</span><br><span class="line">git config --global --unset https.proxy</span><br></pre></td></tr></table></figure>
+<p>之后进一步尝试推送内容，观察是否可以正常运行。</p>
+<h3 id="后记"><a class="markdownIt-Anchor" href="#后记"></a> 后记</h3>
+<p>可能还有其他解决方案，这里就不继续整理了。<br />
+如果问题迟迟得不到解决，假如是突然出现的这个问题，此前没有，那么最终的解决方案可能就是保留必要的配置文件，从头搭一遍博客（或者回滚到之前的版本，但是其实 GitHub 上保存的版本快照已经在 Hexo 推送更改了文件结构了，没有办法直接拿来用，除非你还开辟了一个专门存储博客的本地文件的 GitHub 仓库）<br />
+假如是刚开始搭建博客就遇到这个问题，那么或许也可以考虑换一条路？ Hexo 也不算新了，速度也比较慢。或许你可以考虑更快的 Hugo ？或者是同样搭建简单的 Jekyll ？毕竟试错成本也不算大。多试一试，总是好的。</p>
 
       
     </div>
@@ -400,7 +450,7 @@
         
           
           
-            <img data-src="/covers/病态可爱风.png" data-sizes="auto" alt="Linux 学习笔记" class="lazyload">
+            <img data-src="/covers/touhouvote20.jpg" data-sizes="auto" alt="Linux 学习笔记" class="lazyload">
           
         
         <a href="/2025/02/05/Linux-Learning-Notes/"></a>
@@ -417,7 +467,7 @@
       
         
         
-          <img data-src="/covers/燐空.jpg" data-sizes="auto" alt="骨折回忆录" class="lazyload">
+          <img data-src="/covers/可爱.jpg" data-sizes="auto" alt="骨折回忆录" class="lazyload">
         
       
       <a href="/2025/02/04/%E9%AA%A8%E6%8A%98%E5%9B%9E%E5%BF%86%E5%BD%95/"></a>
@@ -466,10 +516,10 @@
     
       <div>
         <span class="icon-brush"></span>
-        15.6k
+        17k
         &nbsp;|&nbsp;
         <span class="icon-coffee"></span>
-        00:58
+        01:02
       </div>
     
     
@@ -501,7 +551,7 @@
   <h3 class="toc-title">文章目录</h3>
   <div class="sidebar-toc-wrapper toc-div-class" >
       
-        
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8A%A5%E9%94%99%E4%BF%A1%E6%81%AF"><span class="toc-number">1.</span> <span class="toc-text"> 报错信息</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88"><span class="toc-number">2.</span> <span class="toc-text"> 解决方案</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E5%86%85%E5%AE%B9"><span class="toc-number">2.0.0.1.</span> <span class="toc-text"> 参考内容</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B9%E6%A1%88%E4%B8%80%E6%9B%B4%E6%8D%A2%E6%9B%B4%E5%8A%A0%E7%A8%B3%E5%AE%9A%E7%9A%84%E7%BD%91%E7%BB%9C%E7%8E%AF%E5%A2%83%E5%A6%82%E4%BD%BF%E7%94%A8%E6%89%8B%E6%9C%BA%E7%A7%BB%E5%8A%A8%E7%83%AD%E7%82%B9"><span class="toc-number">2.1.</span> <span class="toc-text"> 方案一：更换更加稳定的网络环境（如使用手机移动热点）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B9%E6%A1%88%E4%BA%8C%E4%BF%AE%E6%94%B9%E6%88%96%E5%88%A0%E9%99%A4-deplot_git-%E6%96%87%E4%BB%B6%E5%A4%B9"><span class="toc-number">2.2.</span> <span class="toc-text"> 方案二：修改或删除 .deplot_git 文件夹</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B9%E6%A1%88%E4%B8%89%E9%87%8D%E8%A3%85-hexo-deployer-git"><span class="toc-number">2.3.</span> <span class="toc-text"> 方案三：重装 hexo-deployer-git</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B9%E6%A1%88%E5%9B%9B%E4%BD%BF%E7%94%A8-ssh-%E5%9C%B0%E5%9D%80"><span class="toc-number">2.4.</span> <span class="toc-text"> 方案四：使用 SSH 地址</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B9%E6%A1%88%E4%BA%94%E6%A3%80%E6%9F%A5github%E8%AE%BF%E9%97%AE%E6%9D%83%E9%99%90"><span class="toc-number">2.5.</span> <span class="toc-text"> 方案五：检查github访问权限</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B9%E6%A1%88%E5%85%AD%E6%A3%80%E6%9F%A5%E4%BB%A3%E7%90%86%E8%AE%BE%E7%BD%AE"><span class="toc-number">2.6.</span> <span class="toc-text"> 方案六：检查代理设置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%8E%E8%AE%B0"><span class="toc-number">2.7.</span> <span class="toc-text"> 后记</span></a></li></ol></li></ol>
       
   </div>
 </div>
@@ -781,9 +831,9 @@
           url: "https://ti-fdgg.github.io/2025/02/04/SpawnFailed/",
           excerpt: "",
           description: "",
-          stripContent: "上级文档 如图：  主要报错信息如下： 123456FATAL Something&amp;#x27;s wrong. Maybe you can find the solution here: https://hexo.io/docs/troubleshooting.htmlError: Spawn failed    at ChildProcess.&amp;lt;anonymous&amp;gt; (E:\blogs\myblog\node_modules\hexo-deployer-git\node_modul",
+          stripContent: "上级文档  报错信息 如图：  主要报错信息如下： 123456FATAL Something&amp;#x27;s wrong. Maybe you can find the solution here: https://hexo.io/docs/troubleshooting.htmlError: Spawn failed    at ChildProcess.&amp;lt;anonymous&amp;gt; (E:\blogs\myblog\node_modules\hexo-deployer-git\node",
           date: "Tue Feb 04 2025 13:53:50 GMT+0800",
-          updated: "Sun Feb 09 2025 09:49:11 GMT+0800",
+          updated: "Tue Feb 11 2025 00:56:37 GMT+0800",
           cover: "/images/banner/new_ban.webp",
         };
       </script>
