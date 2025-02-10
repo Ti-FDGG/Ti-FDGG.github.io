@@ -27,15 +27,15 @@
 
   
   
-    <meta name="description" content="上级文档">
+    <meta name="description" content="上级文档  容器技术基本概念 容器：容器是一个标准化的软件单元，它将代码、依赖项和配置文件打包在一起。容器之间是隔离的，但它们共享同一个操作系统内核。 镜像：容器镜像是容器的静态表示，包含了运行容器所需的所有文件和配置。镜像可以被存储、共享和重复使用。 容器引擎：容器引擎是用于创建、运行和管理容器的软件。Docker是最流行的容器引擎之一。 容器编排：容器编排工具用于管理多个容器的生命周期，包括部">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Docker 学习笔记">
 <meta property="og:url" content="https://ti-fdgg.github.io/2025/02/07/Docker-Learning-Notes/index.html">
 <meta property="og:site_name" content="Timothy&#39;s Blog">
-<meta property="og:description" content="上级文档">
+<meta property="og:description" content="上级文档  容器技术基本概念 容器：容器是一个标准化的软件单元，它将代码、依赖项和配置文件打包在一起。容器之间是隔离的，但它们共享同一个操作系统内核。 镜像：容器镜像是容器的静态表示，包含了运行容器所需的所有文件和配置。镜像可以被存储、共享和重复使用。 容器引擎：容器引擎是用于创建、运行和管理容器的软件。Docker是最流行的容器引擎之一。 容器编排：容器编排工具用于管理多个容器的生命周期，包括部">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2025-02-07T07:52:51.000Z">
-<meta property="article:modified_time" content="2025-02-09T16:47:09.813Z">
+<meta property="article:modified_time" content="2025-02-10T04:40:12.101Z">
 <meta property="article:author" content="Mothy Ti">
 <meta property="article:tag" content="Linux">
 <meta property="article:tag" content="Docker">
@@ -218,7 +218,7 @@
   <h3 class="toc-title">文章目录</h3>
   <div class="sidebar-toc-wrapper toc-div-class" >
       
-        
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85-docker"><span class="toc-number">1.</span> <span class="toc-text"> 安装 Docker</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9C%A8-windows-%E6%88%96-macos-%E4%B8%8A%E5%AE%89%E8%A3%85"><span class="toc-number">1.1.</span> <span class="toc-text"> 在 Windows 或 macOS 上安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9C%A8-linux-%E4%B8%8A%E5%AE%89%E8%A3%85"><span class="toc-number">1.2.</span> <span class="toc-text"> 在 Linux 上安装</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE-registry-mirror"><span class="toc-number">1.2.1.</span> <span class="toc-text"> 配置 Registry Mirror</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8-docker-%E5%AE%B9%E5%99%A8"><span class="toc-number">2.</span> <span class="toc-text"> 使用 Docker 容器</span></a></li></ol>
       
   </div>
 </div>
@@ -330,6 +330,47 @@
       
       
         <p><a href="https://ti-fdgg.github.io/2025/02/05/Linux-Learning-Notes/">上级文档</a></p>
+<blockquote>
+<p><strong>容器技术基本概念</strong><br />
+容器：容器是一个标准化的软件单元，它将代码、依赖项和配置文件打包在一起。容器之间是隔离的，但它们共享同一个操作系统内核。<br />
+镜像：容器镜像是容器的静态表示，包含了运行容器所需的所有文件和配置。镜像可以被存储、共享和重复使用。<br />
+容器引擎：容器引擎是用于创建、运行和管理容器的软件。Docker是最流行的容器引擎之一。<br />
+容器编排：容器编排工具用于管理多个容器的生命周期，包括部署、扩展和监控。Kubernetes是最流行的容器编排工具。</p>
+</blockquote>
+<h2 id="安装-docker"><a class="markdownIt-Anchor" href="#安装-docker"></a> 安装 Docker</h2>
+<h3 id="在-windows-或-macos-上安装"><a class="markdownIt-Anchor" href="#在-windows-或-macos-上安装"></a> 在 Windows 或 macOS 上安装</h3>
+<p>Docker 使用了 Linux 内核的容器特性，它依赖于 Linux。所以在 Windows 和 macOS 上，Docker 不得不通过虚拟 Linux 内核的方式来完成任务。<br />
+Docker 也支持「Windows 容器」。</p>
+<h3 id="在-linux-上安装"><a class="markdownIt-Anchor" href="#在-linux-上安装"></a> 在 Linux 上安装</h3>
+<p>注意区分 docker <a target="_blank" rel="noopener" href="http://docker.io">docker.io</a> docker-ce<br />
+Docker 官方提供了安装 Docker 社区版本的简易安装脚本：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">curl -fsSL https://get.docker.com -o get-docker.sh</span><br><span class="line">sudo sh get-docker.sh</span><br></pre></td></tr></table></figure>
+<p>不要在 WSL1 中安装 Docker 。但可以在 WSL2 安装。</p>
+<p>在安装完成后，可以使用</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo adduser 用户名 docker</span><br></pre></td></tr></table></figure>
+<p>推荐将需要使用 Docker 的用户加入 docker 用户组。<strong>注意：docker 用户组中的用户拥有与 root 等效的权限。</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo groupadd docker  # 确保 docker 组存在（一般默认已经有）</span><br><span class="line">sudo usermod -aG docker $USER  # 将当前用户加入 docker 组</span><br></pre></td></tr></table></figure>
+<p>然后注销并重新登录用户，以使用户组更改生效。<br />
+或者使用</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">newgrp docker</span><br></pre></td></tr></table></figure>
+<p>命令使用户组更改生效。</p>
+<h4 id="配置-registry-mirror"><a class="markdownIt-Anchor" href="#配置-registry-mirror"></a> 配置 Registry Mirror</h4>
+<p>在国内，由于网络原因，Docker Hub 的下载速度可能会很慢。可以配置 Docker 使用国内的镜像源。<br />
+编辑 /etc/docker/daemon.json 文件，如果文件不存在则创建它：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;registry-mirrors&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">    <span class="string">&quot;https://docker.m.daocloud.io&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="string">&quot;https://dockerproxy.com&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="string">&quot;https://docker.nju.edu.cn&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="string">&quot;https://mirror.iscas.ac.cn&quot;</span></span><br><span class="line">  <span class="punctuation">]</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><strong>注意：</strong> 维护公共使用的 Docker Hub pull-through cache (registry mirror) 需要非常高的运维成本，因而有很多服务在之前可以使用，但是之后被迫关闭或转为非公开。<strong>因此这里列出的镜像源可能不再可用。</strong><br />
+当 registry-mirrors 配置项的镜像源不可用时，Docker 会自动使用 Docker Hub 的镜像源，此时就可能出现即使配置了镜像源，但是下载速度仍然很慢的情况，甚至是报错连接超时，产生类似如下错误：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Using default tag: latest</span><br><span class="line">Error response from daemon: Get &quot;https://registry-1.docker.io/v2/&quot;: net/http: request canceled while waiting for connection (Client.Timeout exceeded while awaiting headers)</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>重启 Docker 服务使配置生效：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl daemon-reload</span><br><span class="line">sudo systemctl restart docker</span><br></pre></td></tr></table></figure>
+<p>如果此时再运行 <code>docker info</code> 命令，应该可以看到镜像源的配置，如下所示：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Registry Mirrors:</span><br><span class="line"> https://docker.m.daocloud.io/</span><br><span class="line"> https://dockerproxy.com/</span><br><span class="line"> https://docker.nju.edu.cn/</span><br><span class="line"> https://mirror.iscas.ac.cn/</span><br></pre></td></tr></table></figure>
+<p>此时，Docker 将会优先使用配置的镜像源。<br />
+可以使用 Hello World 镜像测试 Docker 是否可以正常工作：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run --rm hello-world</span><br></pre></td></tr></table></figure>
+<h2 id="使用-docker-容器"><a class="markdownIt-Anchor" href="#使用-docker-容器"></a> 使用 Docker 容器</h2>
 
       
     </div>
@@ -389,7 +430,7 @@
         
           
           
-            <img data-src="/covers/罗列.webp" data-sizes="auto" alt="硬链接和软链接" class="lazyload">
+            <img data-src="/covers/很有质感.webp" data-sizes="auto" alt="硬链接和软链接" class="lazyload">
           
         
         <a href="/2025/02/07/HardLink-and-SymbolicLink/"></a>
@@ -406,7 +447,7 @@
       
         
         
-          <img data-src="/covers/rin4.jpg" data-sizes="auto" alt="Vim 学习笔记" class="lazyload">
+          <img data-src="/covers/好看.jpg" data-sizes="auto" alt="Vim 学习笔记" class="lazyload">
         
       
       <a href="/2025/02/07/Vim-Learning-Notes/"></a>
@@ -455,10 +496,10 @@
     
       <div>
         <span class="icon-brush"></span>
-        14.1k
+        15.6k
         &nbsp;|&nbsp;
         <span class="icon-coffee"></span>
-        00:54
+        00:59
       </div>
     
     
@@ -490,7 +531,7 @@
   <h3 class="toc-title">文章目录</h3>
   <div class="sidebar-toc-wrapper toc-div-class" >
       
-        
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85-docker"><span class="toc-number">1.</span> <span class="toc-text"> 安装 Docker</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9C%A8-windows-%E6%88%96-macos-%E4%B8%8A%E5%AE%89%E8%A3%85"><span class="toc-number">1.1.</span> <span class="toc-text"> 在 Windows 或 macOS 上安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9C%A8-linux-%E4%B8%8A%E5%AE%89%E8%A3%85"><span class="toc-number">1.2.</span> <span class="toc-text"> 在 Linux 上安装</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE-registry-mirror"><span class="toc-number">1.2.1.</span> <span class="toc-text"> 配置 Registry Mirror</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8-docker-%E5%AE%B9%E5%99%A8"><span class="toc-number">2.</span> <span class="toc-text"> 使用 Docker 容器</span></a></li></ol>
       
   </div>
 </div>
@@ -770,9 +811,9 @@
           url: "https://ti-fdgg.github.io/2025/02/07/Docker-Learning-Notes/",
           excerpt: "",
           description: "",
-          stripContent: "上级文档 ",
+          stripContent: "上级文档  容器技术基本概念 容器：容器是一个标准化的软件单元，它将代码、依赖项和配置文件打包在一起。容器之间是隔离的，但它们共享同一个操作系统内核。 镜像：容器镜像是容器的静态表示，包含了运行容器所需的所有文件和配置。镜像可以被存储、共享和重复使用。 容器引擎：容器引擎是用于创建、运行和管理容器的软件。Docker是最流行的容器引擎之一。 容器编排：容器编排工具用于管理多个容器的生命周期，包括部署、扩展和监控。Kubernetes是最流行的容器编排工具。   安装 Docker  在 Wind",
           date: "Fri Feb 07 2025 15:52:51 GMT+0800",
-          updated: "Mon Feb 10 2025 00:47:09 GMT+0800",
+          updated: "Mon Feb 10 2025 12:40:12 GMT+0800",
           cover: "/2025/02/07/Docker-Learning-Notes/docker.webp",
         };
       </script>
